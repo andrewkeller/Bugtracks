@@ -55,6 +55,39 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Method, Flags = &h1000
+		Sub Constructor(r As BTRepo)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Initializes this class.
+		  
+		  Constructor
+		  
+		  // Add all the default pages to the Navigation Bar.
+		  
+		  Dim c As MainWindowView
+		  
+		  c = New ctrStartPage( r )
+		  FitAndEmbed c
+		  NavBar.AddView "Start Page", c, True
+		  
+		  c = New ctrSearchPage( r )
+		  FitAndEmbed c
+		  NavBar.AddView "Search", c
+		  
+		  For Each q As BTRepo.PresetQueries In BTRepo.ListPresetQueries
+		    
+		    c = New ctrSearchResultPage( r, q )
+		    FitAndEmbed c
+		    NavBar.AddView BTRepo.ShortStr(q), c
+		    
+		  Next
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h0
 		Sub FitAndEmbed(v As MainWindowView)
 		  // Created 4/15/2011 by Andrew Keller
@@ -84,7 +117,12 @@ End
 		  
 		  // Shows and hides the given views.
 		  
-		  If Not ( show_view Is Nil ) Then show_view.c_Visible = True
+		  If Not ( show_view Is Nil ) Then
+		    
+		    show_view.Update
+		    show_view.c_Visible = True
+		    
+		  End If
 		  
 		  For Each v As MainWindowView In hide_view
 		    
@@ -101,50 +139,6 @@ End
 #tag EndWindowCode
 
 #tag Events NavBar
-	#tag Event
-		Sub Open()
-		  // Created 4/15/2011 by Andrew Keller
-		  
-		  // Add all the default pages to the Navigation Bar.
-		  
-		  Dim c As MainWindowView
-		  
-		  c = New ctrStartPage
-		  FitAndEmbed c
-		  NavBar.AddView "Start Page", c, True
-		  
-		  c = Nil
-		  FitAndEmbed c
-		  NavBar.AddView "Search", c
-		  
-		  c = Nil
-		  FitAndEmbed c
-		  NavBar.AddView "Top Cases", c
-		  
-		  c = Nil
-		  FitAndEmbed c
-		  NavBar.AddView "Newest", c
-		  
-		  c = Nil
-		  FitAndEmbed c
-		  NavBar.AddView "Recently Active", c
-		  
-		  c = Nil
-		  FitAndEmbed c
-		  NavBar.AddView "My Favorites", c
-		  
-		  c = Nil
-		  FitAndEmbed c
-		  NavBar.AddView "My Cases", c
-		  
-		  c = Nil
-		  FitAndEmbed c
-		  NavBar.AddView "Participating In", c
-		  
-		  // done.
-		  
-		End Sub
-	#tag EndEvent
 	#tag Event
 		Sub SelectionChanged(old_sel As MainWindowView, new_sel As MainWindowView)
 		  // Created 4/15/2011 by Andrew Keller

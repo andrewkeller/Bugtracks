@@ -114,6 +114,19 @@ End
 
 
 	#tag Method, Flags = &h0
+		Sub Constructor(r As BTRepo)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Initializes this class.
+		  
+		  Constructor
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub c_EmbedWithin(containingWindow As Window, left As Integer=0, top As Integer=0, width As Integer=-1, height As Integer=-1)
 		  // Created 4/15/2011 by Andrew Keller
 		  
