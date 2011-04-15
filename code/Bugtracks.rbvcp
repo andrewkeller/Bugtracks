@@ -1,6 +1,7 @@
 Type=Desktop
 RBProjectVersion=2011.01
 Class=App;App.rbbas;&h1B94FAFE;&h0;false
+FileTypeSet=FileTypes1;FileTypes1.rbbas;&h66ED1CF9;&h0;false
 BuildSteps=Build Automation;Build Automation.rbbas;&h1B0C66A3;&h0;false
 Folder=User Interfaces;User Interfaces;&h43343C05;&h0;false
 MenuBar=MainMenu;User Interfaces/MainMenu.rbmnu;&h7CE8D934;&h43343C05;false
