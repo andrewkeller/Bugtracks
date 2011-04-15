@@ -94,5 +94,141 @@ End
 	#tag EndEvent
 
 
+	#tag Method, Flags = &h0
+		Sub AddView(caption As String, view As MainWindowView, auto_select As Boolean = False)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Adds the given item to the listbox.
+		  
+		  SuppressEvents = True
+		  
+		  lstNav.AddRow caption
+		  lstNav.RowTag( lstNav.LastIndex ) = view
+		  
+		  SuppressEvents = False
+		  
+		  If auto_select Then
+		    
+		    lstNav.ListIndex = lstNav.LastIndex
+		    
+		  ElseIf lstNav.ListCount = 1 Then
+		    
+		    ReportSelectionChanged
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub ReportSelectionChanged()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // If the selection in the listbox has changed, then report the new one.
+		  
+		  If lstNav.ListIndex < 0 Then
+		    
+		    ReportSelectionChanged "", Nil
+		    
+		  Else
+		    
+		    ReportSelectionChanged lstNav.List( lstNav.ListIndex ), lstNav.RowTag( lstNav.ListIndex )
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub ReportSelectionChanged(newsel_c As String, newsel_v As Variant)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // If the selection in the listbox has changed, then report the new one.
+		  
+		  If p_oldsel_c <> newsel_c Or p_oldsel_v <> newsel_v Then
+		    
+		    RaiseEvent SelectionChanged MainWindowView( p_oldsel_v ), MainWindowView( newsel_v )
+		    
+		    p_oldsel_c = newsel_c
+		    p_oldsel_v = newsel_v
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function SuppressEvents() As Boolean
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Reports the status of SuppressEvents.
+		  
+		  Return p_supev > 0
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub SuppressEvents(Assigns newValue As Boolean)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Increments or Decrements SuppressEvents.
+		  
+		  If newValue Then
+		    
+		    p_supev = p_supev + 1
+		    
+		  Else
+		    
+		    p_supev = p_supev - 1
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+
+	#tag Hook, Flags = &h0
+		Event SelectionChanged(old_sel As MainWindowView, new_sel As MainWindowView)
+	#tag EndHook
+
+
+	#tag Property, Flags = &h21
+		Private p_oldsel_c As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private p_oldsel_v As Variant
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private p_supev As Integer
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
+#tag Events lstNav
+	#tag Event
+		Sub Change()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Possibly report that the selection has changed.
+		  
+		  ReportSelectionChanged
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
