@@ -179,6 +179,19 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub Update()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Part of the MainWindowView interface.
+		  
+		  // There is nothing to update on this container.
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
 
 #tag EndWindowCode
 
