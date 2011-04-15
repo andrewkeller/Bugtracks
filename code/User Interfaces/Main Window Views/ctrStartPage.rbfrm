@@ -12,16 +12,16 @@ Begin ContainerControl ctrStartPage Implements MainWindowView
    HelpTag         =   ""
    InitialParent   =   ""
    Left            =   3.2e+1
-   LockBottom      =   ""
-   LockLeft        =   ""
-   LockRight       =   ""
-   LockTop         =   ""
+   LockBottom      =   True
+   LockLeft        =   True
+   LockRight       =   True
+   LockTop         =   True
    TabIndex        =   0
    TabPanelIndex   =   0
    TabStop         =   True
    Top             =   3.2e+1
    UseFocusRing    =   ""
-   Visible         =   True
+   Visible         =   False
    Width           =   533
    Begin RoundRectangle msgrect
       AutoDeactivate  =   True

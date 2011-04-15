@@ -46,7 +46,7 @@ Begin ContainerControl ctrMainNav
       Hierarchical    =   ""
       Index           =   -2147483648
       InitialParent   =   ""
-      InitialValue    =   "Start Page\rSearch\rTop Cases\rNewest\rRecently Active\rMy Favorites\rMy Cases\rParticipating In"
+      InitialValue    =   ""
       Italic          =   ""
       Left            =   0
       LockBottom      =   True
