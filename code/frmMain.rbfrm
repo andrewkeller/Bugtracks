@@ -1,5 +1,5 @@
 #tag Window
-Begin Window Window1
+Begin Window frmMain
    BackColor       =   &hFFFFFF
    Backdrop        =   ""
    CloseButton     =   True
@@ -8,11 +8,11 @@ Begin Window Window1
    FullScreen      =   False
    HasBackColor    =   False
    Height          =   400
-   ImplicitInstance=   True
+   ImplicitInstance=   False
    LiveResize      =   True
    MacProcID       =   0
    MaxHeight       =   32000
-   MaximizeButton  =   False
+   MaximizeButton  =   True
    MaxWidth        =   32000
    MenuBar         =   2095634740
    MenuBarVisible  =   True
@@ -21,8 +21,8 @@ Begin Window Window1
    MinWidth        =   64
    Placement       =   0
    Resizeable      =   True
-   Title           =   "Untitled"
-   Visible         =   True
+   Title           =   "Bugtracks"
+   Visible         =   False
    Width           =   600
 End
 #tag EndWindow
