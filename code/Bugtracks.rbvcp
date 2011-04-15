@@ -16,7 +16,6 @@ Folder=Back End;Back End;&h6472DA6D;&h0;false
 Class=BTCase;Back End/BTCase.rbbas;&h30629F46;&h6472DA6D;false
 Class=BTSet;Back End/BTSet.rbbas;&h1AC70721;&h6472DA6D;false
 Class=BTRepo;Back End/BTRepo.rbbas;&hA556E9;&h6472DA6D;false
-DefaultWindow=frmMain
 AppMenuBar=MainMenu
 MajorVersion=0
 MinorVersion=0
