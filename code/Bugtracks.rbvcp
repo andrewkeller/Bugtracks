@@ -5,6 +5,7 @@ MenuBar=MainMenu;MainMenu.rbmnu;&h7CE8D934;&h0;false
 BuildSteps=Build Automation;Build Automation.rbbas;&h1B0C66A3;&h0;false
 Window=frmMain;frmMain.rbfrm;&h51EA897D;&h0;false
 Window=ctrMainNav;ctrMainNav.rbfrm;&h45D80360;&h0;false
+Window=ctrStartPage;ctrStartPage.rbfrm;&h1D650E0B;&h0;false
 DefaultWindow=frmMain
 AppMenuBar=MainMenu
 MajorVersion=0
