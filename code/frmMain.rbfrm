@@ -24,6 +24,33 @@ Begin Window frmMain
    Title           =   "Bugtracks"
    Visible         =   False
    Width           =   600
+   Begin ctrMainNav NavBar
+      AcceptFocus     =   ""
+      AcceptTabs      =   True
+      AutoDeactivate  =   True
+      BackColor       =   &hFFFFFF
+      Backdrop        =   ""
+      Enabled         =   True
+      EraseBackground =   True
+      HasBackColor    =   False
+      Height          =   400
+      HelpTag         =   ""
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   0
+      UseFocusRing    =   ""
+      Visible         =   True
+      Width           =   150
+   End
 End
 #tag EndWindow
 

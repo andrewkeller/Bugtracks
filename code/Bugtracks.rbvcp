@@ -1,9 +1,10 @@
 Type=Desktop
 RBProjectVersion=2011.01
 Class=App;App.rbbas;&h1B94FAFE;&h0;false
-Window=frmMain;frmMain.rbfrm;&h51EA897D;&h0;false
 MenuBar=MainMenu;MainMenu.rbmnu;&h7CE8D934;&h0;false
 BuildSteps=Build Automation;Build Automation.rbbas;&h1B0C66A3;&h0;false
+Window=frmMain;frmMain.rbfrm;&h51EA897D;&h0;false
+Window=ctrMainNav;ctrMainNav.rbfrm;&h45D80360;&h0;false
 DefaultWindow=frmMain
 AppMenuBar=MainMenu
 MajorVersion=0
