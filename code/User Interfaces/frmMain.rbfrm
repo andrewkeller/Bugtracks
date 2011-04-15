@@ -23,7 +23,7 @@ Begin Window frmMain
    Resizeable      =   True
    Title           =   "Bugtracks"
    Visible         =   False
-   Width           =   600
+   Width           =   900
    Begin ctrMainNav NavBar
       AcceptFocus     =   ""
       AcceptTabs      =   True
