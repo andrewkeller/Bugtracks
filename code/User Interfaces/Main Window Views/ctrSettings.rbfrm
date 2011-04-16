@@ -76,7 +76,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       TabIndex        =   3
       TabPanelIndex   =   0
       Top             =   46
-      Value           =   1
+      Value           =   2
       Visible         =   True
       Width           =   438
       Begin Label Label1
@@ -257,6 +257,22 @@ End
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Updates this window based on the current state of the repository.
+		  
+		  // Set the heading:
+		  
+		  If p_repo Is Nil Then
+		    lblHead.Caption = "Repository-Specific Settings"
+		    
+		  ElseIf p_repo.RepositoryFolder Is Nil Then
+		    lblHead.Caption = "Repository-Specific Settings for this Bugtracks data pool (not saved yet!)"
+		    
+		  Else
+		    lblHead.Caption = "Repository-Specific Settings for " + p_repo.RepositoryFolder.AbsolutePath
+		    
+		  End If
+		  
+		  
+		  // Set the body:
 		  
 		  If p_repo Is Nil Then
 		    
