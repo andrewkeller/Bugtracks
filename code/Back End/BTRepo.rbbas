@@ -50,6 +50,12 @@ Protected Class BTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub RepositoryFolder(Assigns newFolder As FolderItem)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function RunPresetQuery(q As PresetQueries) As BTSet
 		  
 		End Function
