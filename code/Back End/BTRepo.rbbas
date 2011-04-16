@@ -91,6 +91,42 @@ Protected Class BTRepo
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		 Shared Function Str(q As PresetQueries) As String
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Returns a string version of the description of the given query.
+		  
+		  Select Case q
+		    
+		  Case PresetQueries.TopCases
+		    Return "Top Cases"
+		    
+		  Case PresetQueries.Newest
+		    Return "Newest Cases"
+		    
+		  Case PresetQueries.RecentlyActive
+		    Return "Recently Active Cases"
+		    
+		  Case PresetQueries.MyFavorites
+		    Return "My Favorite Cases"
+		    
+		  Case PresetQueries.MyCases
+		    Return "My Cases"
+		    
+		  Case PresetQueries.ParticipatingIn
+		    Return "Cases I'm Participating In"
+		    
+		  Else
+		    Return "Unknown Query"
+		    
+		  End Select
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
 
 	#tag Enum, Name = PresetQueries, Flags = &h0
 		TopCases

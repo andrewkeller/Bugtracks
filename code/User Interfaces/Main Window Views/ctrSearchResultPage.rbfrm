@@ -118,6 +118,16 @@ End
 		  
 		  Constructor
 		  
+		  If r Is Nil Then
+		    
+		    lblHead.Caption = "Cannot Perform a query on a Nil repository object."
+		    
+		  Else
+		    
+		    lblHead.Caption = BTRepo.Str( q )
+		    
+		  End If
+		  
 		  // done.
 		  
 		End Sub
