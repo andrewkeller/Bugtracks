@@ -21,7 +21,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
    TabStop         =   True
    Top             =   3.2e+1
    UseFocusRing    =   ""
-   Visible         =   True
+   Visible         =   False
    Width           =   4.38e+2
    Begin Label lblHead
       AutoDeactivate  =   True
@@ -316,28 +316,28 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Index           =   -2147483648
          InitialParent   =   "pgpMain"
          Italic          =   ""
-         Left            =   126
+         Left            =   20
          LockBottom      =   ""
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   ""
+         LockRight       =   True
          LockTop         =   True
          Multiline       =   ""
          Scope           =   0
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   4
-         Text            =   "Success!"
+         Text            =   "There are currently no settings at this level."
          TextAlign       =   0
          TextColor       =   &h000000
          TextFont        =   "System"
          TextSize        =   0
          TextUnit        =   0
-         Top             =   151
+         Top             =   58
          Transparent     =   False
          Underline       =   ""
          Visible         =   True
-         Width           =   100
+         Width           =   418
       End
    End
 End
