@@ -63,12 +63,26 @@ Protected Class BTRepo
 
 	#tag Method, Flags = &h0
 		Function RepositoryFolder() As FolderItem
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Returns the FolderItem for the pool.
+		  
+		  Return p_dir
+		  
+		  // done.
 		  
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub RepositoryFolder(Assigns newFolder As FolderItem)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Sets the FolderItem for the pool.
+		  
+		  p_dir = newFolder
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
