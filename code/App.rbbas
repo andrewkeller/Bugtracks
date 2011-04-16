@@ -2,14 +2,13 @@
 Protected Class App
 Inherits Application
 	#tag Event
-		Sub Open()
+		Sub NewDocument()
 		  // Created 4/15/2011 by Andrew Keller
 		  
-		  // The app is starting up.
+		  // The user wants to open a new bug repository.
 		  
-		  // For now, let's load a default FolderItem.
-		  
-		  OpenDocument SpecialFolder.Desktop.Child( "bt" )
+		  Dim w As New frmMain( New BTRepo( Nil ) )
+		  w.Show
 		  
 		  // done.
 		  
