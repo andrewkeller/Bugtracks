@@ -2,7 +2,16 @@
 Protected Class BTRepo
 	#tag Method, Flags = &h0
 		Sub Constructor(dir As FolderItem)
+		  // Created 4/15/2011 by Andrew Keller
 		  
+		  // Load the entire given directory into this class.
+		  
+		  p_dir = dir
+		  p_pool = New Dictionary
+		  
+		  Reload
+		  
+		  // done.
 		End Sub
 	#tag EndMethod
 
@@ -33,6 +42,15 @@ Protected Class BTRepo
 
 	#tag Method, Flags = &h0
 		Sub Reload()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Reloads the entire source directory back
+		  // into memory.  Same as the constructor,
+		  // except it doesn't take a FolderItem
+		  // argument or reinitialize the properties.
+		  
+		  p_pool.Clear
+		  
 		  
 		End Sub
 	#tag EndMethod
@@ -132,6 +150,15 @@ Protected Class BTRepo
 		  
 		End Function
 	#tag EndMethod
+
+
+	#tag Property, Flags = &h1
+		Protected p_dir As FolderItem
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected p_pool As Dictionary
+	#tag EndProperty
 
 
 	#tag Enum, Name = PresetQueries, Flags = &h0
