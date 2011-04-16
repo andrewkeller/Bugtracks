@@ -25,7 +25,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
    Width           =   4.38e+2
    Begin Label lblHead
       AutoDeactivate  =   True
-      Bold            =   ""
+      Bold            =   True
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True

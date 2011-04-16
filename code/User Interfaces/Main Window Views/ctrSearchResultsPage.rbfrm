@@ -25,7 +25,7 @@ Begin ContainerControl ctrSearchResultsPage Implements MainWindowView
    Width           =   350
    Begin Label lblHead
       AutoDeactivate  =   True
-      Bold            =   ""
+      Bold            =   True
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
