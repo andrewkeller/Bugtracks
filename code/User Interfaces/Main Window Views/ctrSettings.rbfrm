@@ -428,7 +428,7 @@ End
 		    lblHead.Caption = "Repository-Specific Settings for this Bugtracks data pool (not saved yet!)"
 		    
 		  Else
-		    lblHead.Caption = "Repository-Specific Settings for " + p_repo.RepositoryFolder.AbsolutePath
+		    lblHead.Caption = "Repository-Specific Settings for " + p_repo.RepositoryFolder.HumanReadablePath( False )
 		    
 		  End If
 		  
