@@ -65,15 +65,22 @@ End
 		  
 		  // Add all the default pages to the Navigation Bar.
 		  
+		  Dim repo_all_good As Boolean = False
+		  If Not ( r Is Nil ) Then
+		    If r.RepoFolderInitialized Then
+		      repo_all_good = True
+		    End If
+		  End If
+		  
 		  Dim c As MainWindowView
 		  
 		  c = New ctrStartPage( r )
 		  FitAndEmbed c
-		  NavBar.AddView "Start Page", c, True
+		  NavBar.AddView "Start Page", c, repo_all_good
 		  
 		  c = New ctrSettings( r )
 		  FitAndEmbed c
-		  NavBar.AddView "Settings", c
+		  NavBar.AddView "Settings", c, Not repo_all_good
 		  
 		  c = New ctrSearchPage( r )
 		  FitAndEmbed c
