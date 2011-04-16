@@ -76,7 +76,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       TabIndex        =   3
       TabPanelIndex   =   0
       Top             =   46
-      Value           =   3
+      Value           =   0
       Visible         =   True
       Width           =   438
       Begin Label Label1
@@ -185,7 +185,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Cancel          =   ""
          Caption         =   "Open a different folder"
          Default         =   ""
-         Enabled         =   True
+         Enabled         =   False
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
@@ -216,7 +216,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Cancel          =   ""
          Caption         =   "Open..."
          Default         =   ""
-         Enabled         =   True
+         Enabled         =   False
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
@@ -247,7 +247,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Cancel          =   ""
          Caption         =   "Save As..."
          Default         =   ""
-         Enabled         =   True
+         Enabled         =   False
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
