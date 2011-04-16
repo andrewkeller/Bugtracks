@@ -88,7 +88,7 @@ End
 		  
 		  For Each q As BTRepo.PresetQueries In BTRepo.ListPresetQueries
 		    
-		    c = New ctrSearchResultPage( r, q )
+		    c = New ctrSearchResultsPage( r, q )
 		    FitAndEmbed c
 		    NavBar.AddView BTRepo.ShortStr(q), c
 		    

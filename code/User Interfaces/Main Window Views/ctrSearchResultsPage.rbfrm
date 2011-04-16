@@ -1,5 +1,5 @@
 #tag Window
-Begin ContainerControl ctrSearchResultPage Implements MainWindowView
+Begin ContainerControl ctrSearchResultsPage Implements MainWindowView
    AcceptFocus     =   ""
    AcceptTabs      =   True
    AutoDeactivate  =   True
