@@ -8,7 +8,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
    Enabled         =   True
    EraseBackground =   True
    HasBackColor    =   False
-   Height          =   1.46e+2
+   Height          =   3.48e+2
    HelpTag         =   ""
    InitialParent   =   ""
    Left            =   3.2e+1
@@ -56,6 +56,128 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       Underline       =   ""
       Visible         =   True
       Width           =   398
+   End
+   Begin PagePanel pgpMain
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   302
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      PanelCount      =   3
+      Panels          =   ""
+      Scope           =   0
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      Top             =   46
+      Value           =   1
+      Visible         =   True
+      Width           =   438
+      Begin Label Label1
+         AutoDeactivate  =   True
+         Bold            =   ""
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   ""
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   0
+         TabPanelIndex   =   2
+         Text            =   "This folder does not appear to be a valid Bugtracks data pool."
+         TextAlign       =   0
+         TextColor       =   &h000000
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   58
+         Transparent     =   False
+         Underline       =   ""
+         Visible         =   True
+         Width           =   418
+      End
+      Begin PushButton PushButton1
+         AutoDeactivate  =   True
+         Bold            =   ""
+         ButtonStyle     =   0
+         Cancel          =   ""
+         Caption         =   "Make this folder a valid Bugtracks data pool"
+         Default         =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   ""
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   2
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   90
+         Underline       =   ""
+         Visible         =   True
+         Width           =   334
+      End
+      Begin Label Label2
+         AutoDeactivate  =   True
+         Bold            =   ""
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   270
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   True
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   0
+         TabPanelIndex   =   1
+         Text            =   "For some reason, the repository object that this window received to display is Nil.\r\rNot much can be done in this state."
+         TextAlign       =   0
+         TextColor       =   &h000000
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   58
+         Transparent     =   False
+         Underline       =   ""
+         Visible         =   True
+         Width           =   398
+      End
    End
 End
 #tag EndWindow
@@ -132,6 +254,23 @@ End
 
 	#tag Method, Flags = &h0
 		Sub Update()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Updates this window based on the current state of the repository.
+		  
+		  If p_repo Is Nil Then
+		    
+		    pgpMain.Value = 0
+		    
+		  ElseIf Not p_repo.RepoFolderInitialized Then
+		    
+		    pgpMain.Value = 1
+		    
+		  Else
+		    
+		    pgpMain.Value = 2
+		    
+		  End If
 		  
 		End Sub
 	#tag EndMethod
@@ -144,3 +283,27 @@ End
 
 #tag EndWindowCode
 
+#tag Events PushButton1
+	#tag Event
+		Sub Action()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Instructs the repository object to initialize the folder.
+		  
+		  If p_repo Is Nil Then
+		    
+		    MsgBox "Okay, the repository object is Nil.  You weren't supposed to be able to click that button."
+		    
+		  Else
+		    
+		    p_repo.InitializeRepoFolder
+		    
+		    Update
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
