@@ -135,7 +135,8 @@ Protected Class BTRepo
 
 
 	#tag Enum, Name = PresetQueries, Flags = &h0
-		TopCases
+		Null
+		  TopCases
 		  Newest
 		  RecentlyActive
 		  MyFavorites
