@@ -70,13 +70,13 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      PanelCount      =   3
+      PanelCount      =   4
       Panels          =   ""
       Scope           =   0
       TabIndex        =   3
       TabPanelIndex   =   0
       Top             =   46
-      Value           =   2
+      Value           =   3
       Visible         =   True
       Width           =   438
       Begin Label Label1
@@ -100,7 +100,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Scope           =   0
          Selectable      =   False
          TabIndex        =   0
-         TabPanelIndex   =   2
+         TabPanelIndex   =   3
          Text            =   "This folder does not appear to be a valid Bugtracks data pool."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -134,12 +134,12 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          LockTop         =   True
          Scope           =   0
          TabIndex        =   1
-         TabPanelIndex   =   2
+         TabPanelIndex   =   3
          TabStop         =   True
          TextFont        =   "System"
          TextSize        =   0
          TextUnit        =   0
-         Top             =   90
+         Top             =   107
          Underline       =   ""
          Visible         =   True
          Width           =   334
@@ -177,6 +177,167 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Underline       =   ""
          Visible         =   True
          Width           =   398
+      End
+      Begin PushButton PushButton2
+         AutoDeactivate  =   True
+         Bold            =   ""
+         ButtonStyle     =   0
+         Cancel          =   ""
+         Caption         =   "Open a different folder"
+         Default         =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   ""
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   2
+         TabPanelIndex   =   3
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   171
+         Underline       =   ""
+         Visible         =   True
+         Width           =   193
+      End
+      Begin PushButton PushButton3
+         AutoDeactivate  =   True
+         Bold            =   ""
+         ButtonStyle     =   0
+         Cancel          =   ""
+         Caption         =   "Open..."
+         Default         =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   ""
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   2
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   171
+         Underline       =   ""
+         Visible         =   True
+         Width           =   132
+      End
+      Begin PushButton PushButton4
+         AutoDeactivate  =   True
+         Bold            =   ""
+         ButtonStyle     =   0
+         Cancel          =   ""
+         Caption         =   "Save As..."
+         Default         =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   ""
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   2
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   107
+         Underline       =   ""
+         Visible         =   True
+         Width           =   132
+      End
+      Begin Label Label3
+         AutoDeactivate  =   True
+         Bold            =   ""
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Multiline       =   ""
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   2
+         TabPanelIndex   =   2
+         Text            =   "This Bugtracks data pool is currently completely in memory."
+         TextAlign       =   0
+         TextColor       =   &h000000
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   58
+         Transparent     =   False
+         Underline       =   ""
+         Visible         =   True
+         Width           =   418
+      End
+      Begin Label Label4
+         AutoDeactivate  =   True
+         Bold            =   ""
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   126
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   ""
+         LockTop         =   True
+         Multiline       =   ""
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   0
+         TabPanelIndex   =   4
+         Text            =   "Success!"
+         TextAlign       =   0
+         TextColor       =   &h000000
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   151
+         Transparent     =   False
+         Underline       =   ""
+         Visible         =   True
+         Width           =   100
       End
    End
 End
@@ -278,13 +439,17 @@ End
 		    
 		    pgpMain.Value = 0
 		    
-		  ElseIf Not p_repo.RepoFolderInitialized Then
+		  ElseIf p_repo.RepositoryFolder Is Nil Then
 		    
 		    pgpMain.Value = 1
 		    
-		  Else
+		  ElseIf Not p_repo.RepoFolderInitialized Then
 		    
 		    pgpMain.Value = 2
+		    
+		  Else
+		    
+		    pgpMain.Value = 3
 		    
 		  End If
 		  
@@ -300,6 +465,30 @@ End
 #tag EndWindowCode
 
 #tag Events PushButton1
+	#tag Event
+		Sub Action()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Instructs the repository object to initialize the folder.
+		  
+		  If p_repo Is Nil Then
+		    
+		    MsgBox "Okay, the repository object is Nil.  You weren't supposed to be able to click that button."
+		    
+		  Else
+		    
+		    p_repo.InitializeRepoFolder
+		    
+		    Update
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton4
 	#tag Event
 		Sub Action()
 		  // Created 4/15/2011 by Andrew Keller
