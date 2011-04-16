@@ -71,6 +71,10 @@ End
 		  FitAndEmbed c
 		  NavBar.AddView "Start Page", c, True
 		  
+		  c = New ctrSettings( r )
+		  FitAndEmbed c
+		  NavBar.AddView "Settings", c
+		  
 		  c = New ctrSearchPage( r )
 		  FitAndEmbed c
 		  NavBar.AddView "Search", c

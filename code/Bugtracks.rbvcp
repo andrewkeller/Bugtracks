@@ -10,6 +10,7 @@ Window=ctrMainNav;User Interfaces/ctrMainNav.rbfrm;&h45D80360;&h43343C05;false
 Folder=Main Window Views;User Interfaces/Main Window Views;&h1A50D061;&h43343C05;false
 Interface=MainWindowView;User Interfaces/Main Window Views/MainWindowView.rbbas;&h70E2F0DF;&h1A50D061;false
 Window=ctrStartPage;User Interfaces/Main Window Views/ctrStartPage.rbfrm;&h1D650E0B;&h1A50D061;false
+Window=ctrSettings;User Interfaces/Main Window Views/ctrSettings.rbfrm;&h590995DF;&h1A50D061;false
 Window=ctrSearchPage;User Interfaces/Main Window Views/ctrSearchPage.rbfrm;&h2FA0DF6C;&h1A50D061;false
 Window=ctrSearchResultPage;User Interfaces/Main Window Views/ctrSearchResultPage.rbfrm;&h6AAC8587;&h1A50D061;false
 Folder=Back End;Back End;&h6472DA6D;&h0;false
