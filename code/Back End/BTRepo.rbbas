@@ -88,9 +88,21 @@ Protected Class BTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function RunKeywordQuery(search_str As String) As BTSet
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function RunPresetQuery(q As PresetQueries) As BTSet
 		  
 		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub SaveToRepoFolder()
+		  
+		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
