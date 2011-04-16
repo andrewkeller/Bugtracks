@@ -111,22 +111,31 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h0
+		Sub Constructor()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Initializes this class.
+		  
+		  Super.Constructor
+		  
+		  Update
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Constructor(r As BTRepo, q As BTRepo.PresetQueries)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Initializes this class.
 		  
-		  Constructor
+		  p_repo = r
+		  p_rsltpqry = q
+		  p_rsltset = Nil
 		  
-		  If r Is Nil Then
-		    
-		    lblHead.Caption = "Cannot Perform a query on a Nil repository object."
-		    
-		  Else
-		    
-		    lblHead.Caption = BTRepo.Str( q )
-		    
-		  End If
+		  Constructor
 		  
 		  // done.
 		  
@@ -174,9 +183,41 @@ End
 
 	#tag Method, Flags = &h0
 		Sub Update()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Refresh the information in this container.
+		  
+		  If p_rsltpqry <> BTRepo.PresetQueries.Null Then
+		    
+		    lblHead.Caption = BTRepo.Str( p_rsltpqry )
+		    
+		  ElseIf Not ( p_rsltset Is Nil ) Then
+		    
+		    lblHead.Caption = "Searched for: ??  <need the query here>"
+		    
+		  Else
+		    
+		    lblHead.Caption = "Cannot Perform a query on a Nil repository object."
+		    
+		  End If
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
+
+
+	#tag Property, Flags = &h1
+		Protected p_repo As BTRepo
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected p_rsltpqry As BTRepo.PresetQueries
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected p_rsltset As BTSet
+	#tag EndProperty
 
 
 #tag EndWindowCode

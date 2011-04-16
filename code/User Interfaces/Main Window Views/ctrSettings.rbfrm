@@ -62,10 +62,27 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h0
+		Sub Constructor()
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Initializes this class.
+		  
+		  Super.Constructor
+		  
+		  Update
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Constructor(r As BTRepo)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Initializes this class.
+		  
+		  p_repo = r
 		  
 		  Constructor
 		  
@@ -118,6 +135,11 @@ End
 		  
 		End Sub
 	#tag EndMethod
+
+
+	#tag Property, Flags = &h1
+		Protected p_repo As BTRepo
+	#tag EndProperty
 
 
 #tag EndWindowCode
