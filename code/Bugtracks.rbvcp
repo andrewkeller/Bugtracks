@@ -18,7 +18,6 @@ Class=SharedBTRepoCode;Back End/SharedBTRepoCode.rbbas;&h409134C8;&h6472DA6D;fal
 Class=VolatileBTRepo;Back End/VolatileBTRepo.rbbas;&h490A4274;&h6472DA6D;false
 Class=BTRepo;Back End/BTRepo.rbbas;&hA556E9;&h6472DA6D;false
 Class=BTSet;Back End/BTSet.rbbas;&h1AC70721;&h6472DA6D;false
-Class=UnhookedBTCase;Back End/UnhookedBTCase.rbbas;&h7D20993B;&h6472DA6D;false
 Class=BTCase;Back End/BTCase.rbbas;&h30629F46;&h6472DA6D;false
 Module=BTGlobals;BTGlobals.rbbas;&h52F10FA1;&h0;false
 Folder=Libraries;Libraries;&h28ECDCEB;&h0;false

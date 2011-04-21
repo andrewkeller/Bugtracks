@@ -1,14 +1,26 @@
 #tag Class
 Protected Class BTCase
-Inherits UnhookedBTCase
+Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
-		Sub Constructor()
+		Sub Constructor(r As BTRepo, creator As BTPerson, headline As String, status As String, description As String)
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub Description()
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function FavoritedBy(person As BTPerson) As Boolean
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub FavoritedBy(person As BTPerson, Assigns newValue As Boolean)
 		  
 		End Sub
 	#tag EndMethod

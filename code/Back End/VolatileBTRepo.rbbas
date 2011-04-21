@@ -128,6 +128,23 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function InsertNewCase(creator As BTPerson, headline As String, status As String, description As String, auto_favorite As Boolean) As BTCase
+		  // Created 4/21/2011 by Andrew Keller
+		  
+		  // Creates a new case with the given information.
+		  
+		  Dim c As New BTCase( Me, creator, headline, status, description )
+		  
+		  If auto_favorite Then c.FavoritedBy( creator ) = True
+		  
+		  Return c
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function ListCasesForQuery(q As PresetQueries) As BTSet
 		  // Created 4/20/2011 by Andrew Keller
 		  

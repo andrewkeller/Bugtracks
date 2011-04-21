@@ -32,12 +32,6 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function CreateCase(headline As String, catetory As String, creator As String) As BTCase
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Sub InitializeRepoFolder()
 		  
 		End Sub
