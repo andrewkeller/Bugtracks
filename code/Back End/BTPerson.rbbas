@@ -33,7 +33,7 @@ Protected Class BTPerson
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Email()
+		Function Email() As String
 		  // Created 4/21/2011 by Andrew Keller
 		  
 		  // Returns the email address of this person.
@@ -42,11 +42,11 @@ Protected Class BTPerson
 		  
 		  // done.
 		  
-		End Sub
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Name()
+		Function Name() As String
 		  // Created 4/21/2011 by Andrew Keller
 		  
 		  // Returns the name of this person.
@@ -55,7 +55,7 @@ Protected Class BTPerson
 		  
 		  // done.
 		  
-		End Sub
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0

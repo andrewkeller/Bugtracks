@@ -39,6 +39,13 @@ Inherits VolatileBTRepo
 
 	#tag Method, Flags = &h0
 		Sub LoadCaseObject(p As PropertyListKFS)
+		  // Created 4/21/2011 by Andrew Keller
+		  
+		  // Inserts the given case object into the database.
+		  
+		  Dim c As New BTCase( Me, p )
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
