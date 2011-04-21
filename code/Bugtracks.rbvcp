@@ -62,6 +62,7 @@ Class=UnitTestArbiterKFS;Libraries/RB Common KFS BSD/Common/Utilities/Unit Testi
 Class=UnitTestBaseClassKFS;Libraries/RB Common KFS BSD/Common/Utilities/Unit Testing Framework/UnitTestBaseClassKFS.rbbas;&h42C7D550;&h78C882DA;false
 Class=UnitTestExceptionKFS;Libraries/RB Common KFS BSD/Common/Utilities/Unit Testing Framework/UnitTestExceptionKFS.rbbas;&h4D85DB16;&h78C882DA;false
 Window=UnitTestWindowKFS;Libraries/RB Common KFS BSD/Common/Utilities/Unit Testing Framework/UnitTestWindowKFS.rbfrm;&hEF2EAC3;&h78C882DA;false
+Class=BTPerson;Back End/BTPerson.rbbas;&h672C7250;&h6472DA6D;false
 AppMenuBar=MainMenu
 MajorVersion=0
 MinorVersion=0
