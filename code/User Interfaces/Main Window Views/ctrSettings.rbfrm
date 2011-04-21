@@ -8,10 +8,10 @@ Begin ContainerControl ctrSettings Implements MainWindowView
    Enabled         =   True
    EraseBackground =   True
    HasBackColor    =   False
-   Height          =   3.48e+2
+   Height          =   348
    HelpTag         =   ""
    InitialParent   =   ""
-   Left            =   3.2e+1
+   Left            =   32
    LockBottom      =   True
    LockLeft        =   True
    LockRight       =   True
@@ -19,10 +19,10 @@ Begin ContainerControl ctrSettings Implements MainWindowView
    TabIndex        =   0
    TabPanelIndex   =   0
    TabStop         =   True
-   Top             =   3.2e+1
+   Top             =   32
    UseFocusRing    =   ""
    Visible         =   False
-   Width           =   4.38e+2
+   Width           =   438
    Begin Label lblHead
       AutoDeactivate  =   True
       Bold            =   True
@@ -375,7 +375,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub c_EmbedWithin(containingWindow As Window, left As Integer=0, top As Integer=0, width As Integer=-1, height As Integer=-1)
+		Sub c_EmbedWithin(containingWindow As Window, left As Integer = 0, top As Integer = 0, width As Integer = - 1, height As Integer = - 1)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Part of the MainWindowView interface.
