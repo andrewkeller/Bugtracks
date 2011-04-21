@@ -2,6 +2,21 @@
 Protected Class VolatileBTRepo
 Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
+		Sub Clear()
+		  // Created 4/20/2011 by Andrew Keller
+		  
+		  // Clears the local database.
+		  
+		  // For now, just reinitialize.
+		  
+		  dbinit
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Constructor()
 		  // Created 4/20/2011 by Andrew Keller
 		  
@@ -56,7 +71,7 @@ Inherits SharedBTRepoCode
 		    kDB_CaseModificationDate, _
 		    kDB_CasePK )
 		    
-		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, PRIMARY KEY ( % ) )", _
+		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, % varchar, PRIMARY KEY ( % ) )", _
 		    kDB_StatusRevisions, _
 		    kDB_StatusRevisionCase, _
 		    kDB_StatusRevisionStatus, _
@@ -74,11 +89,12 @@ Inherits SharedBTRepoCode
 		    kDB_DiscussionModDate, _
 		    kDB_DiscussionDate )
 		    
-		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, PRIMARY KEY ( % ) )", _
+		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, PRIMARY KEY ( %, % ) )", _
 		    kDB_Favorites, _
 		    kDB_FavoriteCase, _
 		    kDB_FavoritePerson, _
-		    kDB_FavoriteCase )
+		    kDB_FavoriteCase, _
+		    kDB_FavoritePerson )
 		    
 		  End If
 		  

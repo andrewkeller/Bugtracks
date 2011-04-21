@@ -32,13 +32,19 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function CreateCase() As BTCase
+		Function CreateCase(headline As String, catetory As String, creator As String) As BTCase
 		  
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub InitializeRepoFolder()
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub LoadCaseObject(p As PropertyListKFS)
 		  
 		End Sub
 	#tag EndMethod
@@ -52,7 +58,7 @@ Inherits VolatileBTRepo
 		  // except it doesn't take a FolderItem
 		  // argument or reinitialize the properties.
 		  
-		  p_pool.Clear
+		  Clear
 		  
 		  // First, we need to get a list of all the
 		  // objects inside the pool directory.
@@ -81,7 +87,7 @@ Inherits VolatileBTRepo
 		        If name.Right( Len( ex ) ) = ex Then name = name.Left( Len( name ) - Len( ex ) )
 		        
 		        Try
-		          p_pool.Value( name ) = New BTCase( New PropertyListKFS( f ) )
+		          LoadCaseObject New PropertyListKFS( f )
 		        Catch err
 		        End Try
 		        
