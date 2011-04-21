@@ -45,30 +45,39 @@ Protected Class VolatileBTRepo
 		  
 		  If p_db.Connect Then
 		    
-		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, % varchar, % varchar, % varchar )", _
+		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, % varchar, % varchar, % varchar, PRIMARY KEY ( % ) )", _
 		    kDB_Cases, _
 		    kDB_CasePK, _
 		    kDB_CaseHeadline, _
 		    kDB_CaseCategory, _
 		    kDB_CaseCreator, _
 		    kDB_CaseCreationDate, _
-		    kDB_CaseModificationDate )
+		    kDB_CaseModificationDate, _
+		    kDB_CasePK )
 		    
-		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar )", _
+		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, PRIMARY KEY ( % ) )", _
 		    kDB_StatusRevisions, _
 		    kDB_StatusRevisionCase, _
 		    kDB_StatusRevisionStatus, _
 		    kDB_StatusRevisionAuthor, _
+		    kDB_StatusRevisionDate, _
 		    kDB_StatusRevisionDate )
 		    
-		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, % varchar, % varchar, % varchar )", _
+		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, % varchar, % varchar, % varchar, PRIMARY KEY ( % ) )", _
 		    kDB_Discussions, _
 		    kDB_DiscussionCase, _
 		    kDB_DiscussionAuthor, _
 		    kDB_DiscussionType, _
 		    kDB_DiscussionText, _
 		    kDB_DiscussionDate, _
-		    kDB_DiscussionModDate )
+		    kDB_DiscussionModDate, _
+		    kDB_DiscussionDate )
+		    
+		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, PRIMARY KEY ( % ) )", _
+		    kDB_Favorites, _
+		    kDB_FavoriteCase, _
+		    kDB_FavoritePerson, _
+		    kDB_FavoriteCase )
 		    
 		  End If
 		  
@@ -282,6 +291,15 @@ Protected Class VolatileBTRepo
 	#tag EndConstant
 
 	#tag Constant, Name = kDB_DiscussionType, Type = String, Dynamic = False, Default = \"dtype", Scope = Protected
+	#tag EndConstant
+
+	#tag Constant, Name = kDB_FavoriteCase, Type = String, Dynamic = False, Default = \"caseid", Scope = Protected
+	#tag EndConstant
+
+	#tag Constant, Name = kDB_FavoritePerson, Type = String, Dynamic = False, Default = \"person", Scope = Protected
+	#tag EndConstant
+
+	#tag Constant, Name = kDB_Favorites, Type = String, Dynamic = False, Default = \"fav", Scope = Protected
 	#tag EndConstant
 
 	#tag Constant, Name = kDB_StatusRevisionAuthor, Type = String, Dynamic = False, Default = \"author", Scope = Protected
