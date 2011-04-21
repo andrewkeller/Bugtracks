@@ -1,7 +1,14 @@
 #tag Class
 Protected Class BTCase
+Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
-		Sub Constructor(plist As PropertyListKFS)
+		Sub Constructor()
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Description()
 		  
 		End Sub
 	#tag EndMethod

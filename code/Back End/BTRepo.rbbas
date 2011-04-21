@@ -1,5 +1,6 @@
 #tag Class
 Protected Class BTRepo
+Inherits VolatileBTRepo
 	#tag Method, Flags = &h0
 		Sub Constructor()
 		  // Created 4/15/2011 by Andrew Keller
@@ -7,7 +8,6 @@ Protected Class BTRepo
 		  // Load the entire given directory into this class.
 		  
 		  p_dir = Nil
-		  p_pool = New Dictionary
 		  
 		  Reload
 		  
@@ -23,7 +23,6 @@ Protected Class BTRepo
 		  // Load the entire given directory into this class.
 		  
 		  p_dir = dir
-		  p_pool = New Dictionary
 		  
 		  Reload
 		  
@@ -33,28 +32,15 @@ Protected Class BTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub InitializeRepoFolder()
+		Function CreateCase() As BTCase
 		  
-		End Sub
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		 Shared Function ListPresetQueries() As PresetQueries()
-		  // Created 4/15/2011 by Andrew Keller
+		Sub InitializeRepoFolder()
 		  
-		  // Returns the list of all preset queries.
-		  
-		  Return Array ( _
-		  PresetQueries.TopCases, _
-		  PresetQueries.Newest, _
-		  PresetQueries.RecentlyActive, _
-		  PresetQueries.MyFavorites, _
-		  PresetQueries.MyCases, _
-		  PresetQueries.ParticipatingIn )
-		  
-		  // done.
-		  
-		End Function
+		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
@@ -141,18 +127,6 @@ Protected Class BTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function RunKeywordQuery(search_str As String) As BTSet
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function RunPresetQuery(q As PresetQueries) As BTSet
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Sub SaveChanges(pgd As ProgressDelegateKFS = Nil)
 		  
 		End Sub
@@ -232,85 +206,9 @@ Protected Class BTRepo
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		 Shared Function ShortStr(q As PresetQueries) As String
-		  // Created 4/15/2011 by Andrew Keller
-		  
-		  // Returns a short string version of the description of the given query.
-		  
-		  Select Case q
-		    
-		  Case PresetQueries.TopCases
-		    Return "Top Cases"
-		    
-		  Case PresetQueries.Newest
-		    Return "Newest"
-		    
-		  Case PresetQueries.RecentlyActive
-		    Return "Recently Active"
-		    
-		  Case PresetQueries.MyFavorites
-		    Return "My Favorites"
-		    
-		  Case PresetQueries.MyCases
-		    Return "My Cases"
-		    
-		  Case PresetQueries.ParticipatingIn
-		    Return "Participating In"
-		    
-		  Else
-		    Return "Unknown Query"
-		    
-		  End Select
-		  
-		  // done.
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		 Shared Function Str(q As PresetQueries) As String
-		  // Created 4/15/2011 by Andrew Keller
-		  
-		  // Returns a string version of the description of the given query.
-		  
-		  Select Case q
-		    
-		  Case PresetQueries.TopCases
-		    Return "Top Cases"
-		    
-		  Case PresetQueries.Newest
-		    Return "Newest Cases"
-		    
-		  Case PresetQueries.RecentlyActive
-		    Return "Recently Active Cases"
-		    
-		  Case PresetQueries.MyFavorites
-		    Return "My Favorite Cases"
-		    
-		  Case PresetQueries.MyCases
-		    Return "My Cases"
-		    
-		  Case PresetQueries.ParticipatingIn
-		    Return "Cases I'm Participating In"
-		    
-		  Else
-		    Return "Unknown Query"
-		    
-		  End Select
-		  
-		  // done.
-		  
-		End Function
-	#tag EndMethod
-
 
 	#tag Property, Flags = &h1
 		Protected p_dir As FolderItem
-	#tag EndProperty
-
-	#tag Property, Flags = &h1
-		Protected p_pool As Dictionary
 	#tag EndProperty
 
 
@@ -319,17 +217,6 @@ Protected Class BTRepo
 
 	#tag Constant, Name = kSettingsFileBasename, Type = String, Dynamic = False, Default = \"settings", Scope = Public
 	#tag EndConstant
-
-
-	#tag Enum, Name = PresetQueries, Flags = &h0
-		Null
-		  TopCases
-		  Newest
-		  RecentlyActive
-		  MyFavorites
-		  MyCases
-		ParticipatingIn
-	#tag EndEnum
 
 
 	#tag ViewBehavior

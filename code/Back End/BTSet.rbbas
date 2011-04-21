@@ -1,50 +1,23 @@
 #tag Class
 Protected Class BTSet
+Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
 		Function CaseCount() As Integer
-		  // Created 4/19/2011 by Andrew Keller
-		  
-		  // Returns the number of cases in this set.
-		  
-		  Return UBound( p_cases ) + 1
-		  
-		  // done.
 		  
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Constructor(case_list() As BTCase)
-		  // Created 4/19/2011 by Andrew Keller
-		  
-		  // Basic constructor.
-		  
-		  p_cases = case_list
-		  
-		  // done.
+		Sub Constructor(r As VolatileBTRepo, q As PresetQueries)
 		  
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Function Item(index As Integer) As BTCase
-		  // Created 4/19/2011 by Andrew Keller
+	#tag Method, Flags = &h1000
+		Sub Constructor(r As VolatileBTRepo, kws As String)
 		  
-		  // Returns a reference to the given item.
-		  
-		  // Raises an OutOfBoundsException if the given index is out of bounds.
-		  
-		  Return p_cases( index )
-		  
-		  // done.
-		  
-		End Function
+		End Sub
 	#tag EndMethod
-
-
-	#tag Property, Flags = &h1
-		Protected p_cases() As BTCase
-	#tag EndProperty
 
 
 End Class
