@@ -1,6 +1,6 @@
 #tag Class
 Protected Class BTCase
-Inherits SharedBTRepoCode
+Inherits UnhookedBTCase
 	#tag Method, Flags = &h0
 		Sub Constructor()
 		  
