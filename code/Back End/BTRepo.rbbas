@@ -43,7 +43,7 @@ Inherits VolatileBTRepo
 		  
 		  // Inserts the given case object into the database.
 		  
-		  Dim c As New BTCase( Me, p, pk )
+		  Dim c As BTCase = BTCase.LoadExistingCase( Me, p, pk )
 		  
 		  // done.
 		  

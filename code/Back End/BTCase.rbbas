@@ -13,14 +13,13 @@ Inherits SharedBTRepoCode
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Sub Constructor(r As VolatileBTRepo, creator As BTPerson, headline As String, status As String, description As String)
+	#tag Method, Flags = &h1001
+		Protected Sub Constructor()
+		  // Created 4/23/2011 by Andrew Keller
 		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h1000
-		Sub Constructor(r As VolatileBTRepo, case_object As PropertyListKFS, pk As String)
+		  // Basic constructor.  Only accessible from this class.
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
@@ -59,6 +58,18 @@ Inherits SharedBTRepoCode
 		Sub Headline(Assigns newValue As String)
 		  
 		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		 Shared Function InsertNewCase(r As VolatileBTRepo, creator As BTPerson, headline As String, status As String, description As String, auto_favorite As Boolean) As BTCase
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1000
+		 Shared Function LoadExistingCase(r As VolatileBTRepo, case_object As PropertyListKFS, pk As String) As BTCase
+		  
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0

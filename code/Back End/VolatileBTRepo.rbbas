@@ -133,11 +133,7 @@ Inherits SharedBTRepoCode
 		  
 		  // Creates a new case with the given information.
 		  
-		  Dim c As New BTCase( Me, creator, headline, status, description )
-		  
-		  If auto_favorite Then c.FavoritedBy( creator ) = True
-		  
-		  Return c
+		  Return BTCase.InsertNewCase( Me, creator, headline, status, description, auto_favorite )
 		  
 		  // done.
 		  
