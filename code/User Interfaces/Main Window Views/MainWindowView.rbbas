@@ -1,7 +1,7 @@
 #tag Interface
 Protected Interface MainWindowView
 	#tag Method, Flags = &h0
-		Sub c_EmbedWithin(containingWindow As Window, left As Integer=0, top As Integer=0, width As Integer=-1, height As Integer=-1)
+		Sub c_EmbedWithin(containingWindow As Window, left As Integer = 0, top As Integer = 0, width As Integer = - 1, height As Integer = - 1)
 		  
 		End Sub
 	#tag EndMethod

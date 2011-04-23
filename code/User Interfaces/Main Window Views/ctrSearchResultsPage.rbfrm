@@ -8,10 +8,10 @@ Begin ContainerControl ctrSearchResultsPage Implements MainWindowView
    Enabled         =   True
    EraseBackground =   True
    HasBackColor    =   False
-   Height          =   2.15e+2
+   Height          =   215
    HelpTag         =   ""
    InitialParent   =   ""
-   Left            =   3.2e+1
+   Left            =   32
    LockBottom      =   True
    LockLeft        =   True
    LockRight       =   True
@@ -19,7 +19,7 @@ Begin ContainerControl ctrSearchResultsPage Implements MainWindowView
    TabIndex        =   0
    TabPanelIndex   =   0
    TabStop         =   True
-   Top             =   3.2e+1
+   Top             =   32
    UseFocusRing    =   ""
    Visible         =   False
    Width           =   350
