@@ -124,6 +124,19 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h21
+		Private Sub ruve(v As MainWindowView, event_id As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Informs the user that the given event was not handled.
+		  
+		  MsgBox "Unsupported event in "+Introspection.GetType(v).Name+": '"+event_id+"'"
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h0
 		Sub SwapViewTo(show_view As MainWindowView, ParamArray hide_view As MainWindowView)
 		  // Created 4/15/2011 by Andrew Keller
@@ -149,7 +162,42 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub ViewEventHook(v As MainWindowView, eid As String)
+		Sub ViewEventHook(v As MainWindowView, event_id As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Handle any events from the views.
+		  
+		  If v IsA ctrSearchPage Then
+		    
+		    If event_id = kViewEvent_NewCase Then
+		      
+		      Dim nv As New ctrNewCase
+		      FitAndEmbed nv
+		      NavBar.AddView "New Case", nv, True
+		      
+		    Else
+		      ruve v, event_id
+		    End If
+		    
+		  ElseIf v IsA ctrNewCase Then
+		    
+		    If event_id = kViewEvent_Cancel Then
+		      
+		      NavBar.RemoveView v
+		      
+		    ElseIf event_id = kViewEvent_Submit Then
+		      
+		      NavBar.RemoveView v
+		      
+		    Else
+		      ruve v, event_id
+		    End If
+		    
+		  Else
+		    ruve v, event_id
+		  End If
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
