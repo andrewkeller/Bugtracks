@@ -61,6 +61,7 @@ End
 		  
 		  // Initializes this class.
 		  
+		  p_repo = r
 		  Constructor
 		  
 		  // Add all the default pages to the Navigation Bar.
@@ -195,6 +196,11 @@ End
 		      
 		    ElseIf event_id = kViewEvent_Submit Then
 		      
+		      Dim nc As ctrNewCase = ctrNewCase( v )
+		      
+		      Dim c As New ctrViewCase( p_repo.InsertNewCase( nc.Creator, nc.Headline, nc.Status, nc.Description, True ) )
+		      FitAndEmbed c
+		      NavBar.AddView nc.Headline, c, True
 		      NavBar.RemoveView v
 		      
 		    Else
@@ -209,6 +215,11 @@ End
 		  
 		End Sub
 	#tag EndMethod
+
+
+	#tag Property, Flags = &h1
+		Protected p_repo As BTRepo
+	#tag EndProperty
 
 
 #tag EndWindowCode
