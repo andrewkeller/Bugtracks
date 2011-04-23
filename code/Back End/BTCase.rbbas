@@ -68,6 +68,85 @@ Inherits SharedBTRepoCode
 
 	#tag Method, Flags = &h0
 		 Shared Function InsertNewCase(r As VolatileBTRepo, new_creator As BTPerson, new_headline As String, new_category As String, new_status As String, new_description As String, auto_favorite As Boolean) As BTCase
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Inserts the given case into the given repository,
+		  // assuming that it is a brand new case.  If the
+		  // repository is Nil, then a NilObjectException is raised.
+		  
+		  // First, assemble all the required components.
+		  
+		  Dim new_pk As String = GenerateNewPrimaryKey
+		  // Headline is already set.
+		  // Category is already set.
+		  // Creator is already set.
+		  Dim new_date As New Date
+		  // Status is already set.
+		  // The first message is already set.
+		  Dim new_msgtype As String = kDiscussionTypeStandard
+		  
+		  
+		  // Next, insert the new data.
+		  
+		  Dim sql As PreparedSQLStatement = r.dbprep( "INSERT INTO ? ( ?, ?, ?, ?, ?, ? ) VALUES ( ?, ?, ?, ?, ?, ? )" )
+		  
+		  sql.SQLExecute _
+		  kDB_Cases, _
+		  kDB_CasePK, _
+		  kDB_CaseHeadline, _
+		  kDB_CaseCategory, _
+		  kDB_CaseCreator, _
+		  kDB_CaseCreationDate, _
+		  kDB_CaseModificationDate, _
+		  new_pk, _
+		  new_headline, _
+		  new_category, _
+		  Str( new_creator, "" ), _
+		  new_date, _
+		  new_date
+		  
+		  sql = r.dbprep( "INSERT INTO ? ( ?, ?, ?, ? ) VALUES ( ?, ?, ?, ? )" )
+		  
+		  sql.SQLExecute _
+		  kDB_StatusRevisions, _
+		  kDB_StatusRevisionCase, _
+		  kDB_StatusRevisionStatus, _
+		  kDB_StatusRevisionAuthor, _
+		  kDB_StatusRevisionDate, _
+		  new_pk, _
+		  new_status, _
+		  Str( new_creator, "" ), _
+		  new_date
+		  
+		  sql = r.dbprep( "INSERT INTO ? ( ?, ?, ?, ?, ?, ? ) VALUES ( ?, ?, ?, ?, ?, ? )" )
+		  
+		  sql.SQLExecute _
+		  kDB_Discussions, _
+		  kDB_DiscussionCase, _
+		  kDB_DiscussionAuthor, _
+		  kDB_DiscussionType, _
+		  kDB_DiscussionText, _
+		  kDB_DiscussionDate, _
+		  kDB_DiscussionModDate, _
+		  new_pk, _
+		  Str( new_creator, "" ), _
+		  new_msgtype, _
+		  new_description, _
+		  new_date, _
+		  new_date
+		  
+		  sql = r.dbprep( "INSERT INTO ? ( ?, ? ) VALUES ( ?, ? )" )
+		  
+		  sql.SQLExecute _
+		  kDB_Favorites, _
+		  kDB_FavoriteCase, _
+		  kDB_FavoritePerson, _
+		  new_pk, _
+		  new_status
+		  
+		  Return New BTCase( r, new_pk )
+		  
+		  // done.
 		  
 		End Function
 	#tag EndMethod
