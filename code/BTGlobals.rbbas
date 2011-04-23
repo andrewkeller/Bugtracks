@@ -54,6 +54,27 @@ Protected Module BTGlobals
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Function Str(p As BTPerson, default_value As String = "Nil") As String
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the Signature of the given person.
+		  
+		  If p Is Nil Then
+		    
+		    Return default_value
+		    
+		  Else
+		    
+		    Return p.Signature
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
 	#tag DelegateDeclaration, Flags = &h0
 		Delegate Sub ViewEventHookMethod(v As MainWindowView, event_id As String)
 	#tag EndDelegateDeclaration
