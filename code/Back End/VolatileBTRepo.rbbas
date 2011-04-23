@@ -146,7 +146,7 @@ Inherits SharedBTRepoCode
 		  
 		  // Returns the set of cases for the given query.
 		  
-		  Return New BTSet( Me, q )
+		  Return BTSet.NewFromQuery( Me, q )
 		  
 		  // done.
 		  
@@ -159,7 +159,7 @@ Inherits SharedBTRepoCode
 		  
 		  // Returns the set of cases for the given query.
 		  
-		  Return New BTSet( Me, search_str )
+		  Return BTSet.NewFromQuery( Me, search_str )
 		  
 		  // done.
 		  
