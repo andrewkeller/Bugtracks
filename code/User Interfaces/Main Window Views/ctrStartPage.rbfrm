@@ -219,7 +219,7 @@ End
 		  
 		  // Part of the MainWindowView interface.
 		  
-		  // There is nothing to update on this container.
+		  // There is nothing to update in this container.
 		  
 		  // done.
 		  

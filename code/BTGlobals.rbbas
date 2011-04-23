@@ -89,6 +89,9 @@ Protected Module BTGlobals
 	#tag Constant, Name = kViewEvent_Submit, Type = String, Dynamic = False, Default = \"submit", Scope = Public
 	#tag EndConstant
 
+	#tag Constant, Name = kViewEvent_UpdateLabel, Type = String, Dynamic = False, Default = \"update_label", Scope = Public
+	#tag EndConstant
+
 
 	#tag ViewBehavior
 		#tag ViewProperty

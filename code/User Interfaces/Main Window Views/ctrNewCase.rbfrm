@@ -413,7 +413,7 @@ Begin ContainerControl ctrNewCase Implements MainWindowView
       Cancel          =   ""
       Caption         =   "Create Case"
       Default         =   ""
-      Enabled         =   True
+      Enabled         =   False
       Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
@@ -473,6 +473,32 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h0
+		Function Category() As String
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the current case category that the user has supplied.
+		  
+		  Return txtCategory.Text
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Category(Assigns newValue As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the case category.
+		  
+		  txtCategory.Text = newValue
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Constructor()
 		  // Created 4/15/2011 by Andrew Keller
 		  
@@ -496,6 +522,58 @@ End
 		  p_repo = r
 		  
 		  Constructor
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function Creator() As BTPerson
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the current case creator that the user has supplied.
+		  
+		  Return txtCreator.Text
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Creator(Assigns newValue As BTPerson)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the case creator.
+		  
+		  txtCreator.Text = Str( newValue )
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function Description() As String
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the current case description that the user has supplied.
+		  
+		  Return txtDesc.Text
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Description(Assigns newValue As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the case description.
+		  
+		  txtDesc.Text = newValue
 		  
 		  // done.
 		  
@@ -542,6 +620,32 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function Headline() As String
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the current case headline that the user has supplied.
+		  
+		  Return txtHeadline.Text
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Headline(Assigns newValue As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the case headline.
+		  
+		  txtHeadline.Text = newValue
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub ReportEvent(event_id As String)
 		  // Created 4/23/2011 by Andrew Keller
 		  
@@ -559,7 +663,84 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function Status() As String
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the current case status that the user has supplied.
+		  
+		  Return txtStatus.Text
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Status(Assigns newValue As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the case status.
+		  
+		  txtStatus.Text = newValue
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Update()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Part of the MainWindowView interface.
+		  
+		  // There is nothing to update in this container.
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub UpdateButtons()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Updates the status of the controls in this container.
+		  
+		  Dim err As String
+		  
+		  If txtCreator.Text = "" Then
+		    err = "the name of the creator"
+		    
+		  ElseIf txtHeadline.Text = "" Then
+		    err = "the headline"
+		    
+		  ElseIf txtCategory.Text = "" Then
+		    err = "the category"
+		    
+		  ElseIf txtStatus.Text = "" Then
+		    err = "the status"
+		    
+		  ElseIf txtDesc.Text = "" Then
+		    err = "a description"
+		    
+		  Else
+		    err = ""
+		  End If
+		  
+		  If err = "" Then
+		    
+		    cmdSubmit.Enabled = True
+		    cmdSubmit.HelpTag = ""
+		    
+		  Else
+		    
+		    cmdSubmit.Enabled = False
+		    cmdSubmit.HelpTag = "You must supply "+err+" of this case."
+		    
+		  End If
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
@@ -602,6 +783,78 @@ End
 
 #tag EndWindowCode
 
+#tag Events txtCreator
+	#tag Event
+		Sub TextChange()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Update the UI to reflect the new text.
+		  
+		  UpdateButtons
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events txtHeadline
+	#tag Event
+		Sub TextChange()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Update the UI to reflect the new text.
+		  
+		  ReportEvent kViewEvent_UpdateLabel
+		  
+		  UpdateButtons
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events txtCategory
+	#tag Event
+		Sub TextChange()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Update the UI to reflect the new text.
+		  
+		  UpdateButtons
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events txtStatus
+	#tag Event
+		Sub TextChange()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Update the UI to reflect the new text.
+		  
+		  UpdateButtons
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events txtDesc
+	#tag Event
+		Sub TextChange()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Update the UI to reflect the new text.
+		  
+		  UpdateButtons
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events cmdSubmit
 	#tag Event
 		Sub Action()
