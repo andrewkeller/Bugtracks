@@ -2,6 +2,18 @@
 Protected Class BTCase
 Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
+		Function Category() As String
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Category(Assigns newValue As String)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Constructor(r As VolatileBTRepo, creator As BTPerson, headline As String, status As String, description As String)
 		  
 		End Sub
@@ -59,6 +71,12 @@ Inherits SharedBTRepoCode
 		Sub Status(Assigns newValue As String)
 		  
 		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function StyledBody() As StyledText
+		  
+		End Function
 	#tag EndMethod
 
 
