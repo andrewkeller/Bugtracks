@@ -30,6 +30,19 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
+		Protected Sub dbcommit()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Invokes a commit on the database.
+		  
+		  p_db.Commit
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
 		Protected Sub dbexec(sql As String)
 		  // Created 4/20/2011 by Andrew Keller
 		  
@@ -104,6 +117,32 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
+		Protected Function dbprep(sql As String) As PreparedSQLStatement
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns a PreparedSQLStatement for the given query.
+		  
+		  Return p_db.Prepare( sql )
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub dbrollback()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Invokes a rollback on the database.
+		  
+		  p_db.Rollback
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
 		Protected Function dbsel(sql As String) As RecordSet
 		  // Created 4/20/2011 by Andrew Keller
 		  
@@ -128,12 +167,12 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function InsertNewCase(creator As BTPerson, headline As String, status As String, description As String, auto_favorite As Boolean) As BTCase
+		Function InsertNewCase(creator As BTPerson, headline As String, category As String, status As String, description As String, auto_favorite As Boolean) As BTCase
 		  // Created 4/21/2011 by Andrew Keller
 		  
 		  // Creates a new case with the given information.
 		  
-		  Return BTCase.InsertNewCase( Me, creator, headline, status, description, auto_favorite )
+		  Return BTCase.InsertNewCase( Me, creator, headline, category, status, description, auto_favorite )
 		  
 		  // done.
 		  

@@ -24,6 +24,12 @@ Inherits SharedBTRepoCode
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h1000
+		Sub Constructor(r As VolatileBTRepo, case_id As String)
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h0
 		Function Creator() As BTPerson
 		  
@@ -61,7 +67,7 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		 Shared Function InsertNewCase(r As VolatileBTRepo, creator As BTPerson, headline As String, status As String, description As String, auto_favorite As Boolean) As BTCase
+		 Shared Function InsertNewCase(r As VolatileBTRepo, new_creator As BTPerson, new_headline As String, new_category As String, new_status As String, new_description As String, auto_favorite As Boolean) As BTCase
 		  
 		End Function
 	#tag EndMethod

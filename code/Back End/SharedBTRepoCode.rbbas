@@ -1,8 +1,71 @@
 #tag Class
 Protected Class SharedBTRepoCode
 	#tag Method, Flags = &h1
+		Protected Sub dbcommit()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // This method exists only to allow all classes
+		  // that inherit from this class access to this method,
+		  // which is currently only implemented in VolatileBTRepo.
+		  
+		  // Since this method is currently not implemented
+		  // in this class, raise an exception.
+		  
+		  Dim e As New UnsupportedFormatException
+		  e.ErrorNumber = 1
+		  e.Message = "The "+CurrentMethodName+" method is not available in this class."
+		  Raise e
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
 		Protected Sub dbexec(sql As String)
 		  // Created 4/20/2011 by Andrew Keller
+		  
+		  // This method exists only to allow all classes
+		  // that inherit from this class access to this method,
+		  // which is currently only implemented in VolatileBTRepo.
+		  
+		  // Since this method is currently not implemented
+		  // in this class, raise an exception.
+		  
+		  Dim e As New UnsupportedFormatException
+		  e.ErrorNumber = 1
+		  e.Message = "The "+CurrentMethodName+" method is not available in this class."
+		  Raise e
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Function dbprep(sql As String) As PreparedSQLStatement
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // This method exists only to allow all classes
+		  // that inherit from this class access to this method,
+		  // which is currently only implemented in VolatileBTRepo.
+		  
+		  // Since this method is currently not implemented
+		  // in this class, raise an exception.
+		  
+		  Dim e As New UnsupportedFormatException
+		  e.ErrorNumber = 1
+		  e.Message = "The "+CurrentMethodName+" method is not available in this class."
+		  Raise e
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub dbrollback()
+		  // Created 4/23/2011 by Andrew Keller
 		  
 		  // This method exists only to allow all classes
 		  // that inherit from this class access to this method,
@@ -36,6 +99,31 @@ Protected Class SharedBTRepoCode
 		  e.ErrorNumber = 1
 		  e.Message = "The "+CurrentMethodName+" method is not available in this class."
 		  Raise e
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Shared Function GenerateNewPrimaryKey() As String
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns a new primary key for a new case.
+		  // This key is supposed to be globally unique,
+		  // across repositories and even computers.
+		  // To help enforce this, this method is a
+		  // Shared method that takes no parameters,
+		  // and knows nothing about the repository.
+		  
+		  // For now, this algorithm returns a unique key
+		  // within a single second.  When this program
+		  // becomes more stable, this algorithm should
+		  // be changed to allow for multiple unique keys
+		  // within a second.
+		  
+		  Dim d As New Date
+		  Return d.SQLDateTime
 		  
 		  // done.
 		  
@@ -230,6 +318,9 @@ Protected Class SharedBTRepoCode
 	#tag EndConstant
 
 	#tag Constant, Name = kDB_StatusRevisionStatus, Type = String, Dynamic = False, Default = \"status", Scope = Protected
+	#tag EndConstant
+
+	#tag Constant, Name = kDiscussionTypeStandard, Type = String, Dynamic = False, Default = \"standard", Scope = Protected
 	#tag EndConstant
 
 
