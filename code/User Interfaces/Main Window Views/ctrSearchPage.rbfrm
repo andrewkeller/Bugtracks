@@ -180,12 +180,12 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub c_EmbedWithin(containingWindow As Window, left As Integer = 0, top As Integer = 0, width As Integer = - 1, height As Integer = - 1)
+		Sub EmbedWithin1(containingWindow As Window, left As Integer = 0, top As Integer = 0, width As Integer = - 1, height As Integer = - 1)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Part of the MainWindowView interface.
 		  
-		  Me.EmbedWithin containingWindow, left, top, width, height
+		  EmbedWithin containingWindow, left, top, width, height
 		  
 		  // done.
 		  
@@ -193,7 +193,13 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function c_Visible() As Boolean
+		Sub Update()
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function Visible1() As Boolean
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Part of the MainWindowView interface.
@@ -206,7 +212,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub c_Visible(Assigns newValue As Boolean)
+		Sub Visible1(Assigns newValue As Boolean)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Part of the MainWindowView interface.
@@ -214,12 +220,6 @@ End
 		  Me.Visible = newValue
 		  
 		  // done.
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub Update()
 		  
 		End Sub
 	#tag EndMethod

@@ -113,7 +113,7 @@ End
 		    w = Self.Width - l
 		    h = Self.Height
 		    
-		    v.c_EmbedWithin Self, l, t, w, h
+		    v.EmbedWithin1 Self, l, t, w, h
 		    
 		  End If
 		  
@@ -131,13 +131,13 @@ End
 		  If Not ( show_view Is Nil ) Then
 		    
 		    show_view.Update
-		    show_view.c_Visible = True
+		    show_view.Visible1 = True
 		    
 		  End If
 		  
 		  For Each v As MainWindowView In hide_view
 		    
-		    If Not ( v Is Nil ) Then v.c_Visible = False
+		    If Not ( v Is Nil ) Then v.Visible1 = False
 		    
 		  Next
 		  

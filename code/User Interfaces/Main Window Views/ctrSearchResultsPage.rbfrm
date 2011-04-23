@@ -143,38 +143,12 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub c_EmbedWithin(containingWindow As Window, left As Integer = 0, top As Integer = 0, width As Integer = - 1, height As Integer = - 1)
+		Sub EmbedWithin1(containingWindow As Window, left As Integer = 0, top As Integer = 0, width As Integer = - 1, height As Integer = - 1)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Part of the MainWindowView interface.
 		  
-		  Me.EmbedWithin containingWindow, left, top, width, height
-		  
-		  // done.
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Function c_Visible() As Boolean
-		  // Created 4/15/2011 by Andrew Keller
-		  
-		  // Part of the MainWindowView interface.
-		  
-		  Return Me.Visible
-		  
-		  // done.
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub c_Visible(Assigns newValue As Boolean)
-		  // Created 4/15/2011 by Andrew Keller
-		  
-		  // Part of the MainWindowView interface.
-		  
-		  Me.Visible = newValue
+		  EmbedWithin containingWindow, left, top, width, height
 		  
 		  // done.
 		  
@@ -200,6 +174,32 @@ End
 		    lblHead.Caption = "Cannot Perform a query on a Nil repository object."
 		    
 		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function Visible1() As Boolean
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Part of the MainWindowView interface.
+		  
+		  Return Me.Visible
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Visible1(Assigns newValue As Boolean)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Part of the MainWindowView interface.
+		  
+		  Me.Visible = newValue
 		  
 		  // done.
 		  
