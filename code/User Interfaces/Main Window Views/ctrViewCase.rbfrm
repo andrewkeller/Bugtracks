@@ -132,7 +132,7 @@ Begin ContainerControl ctrViewCase Implements MainWindowView
       TextUnit        =   0
       Top             =   14
       Underline       =   ""
-      UseFocusRing    =   True
+      UseFocusRing    =   False
       Visible         =   True
       Width           =   148
    End
@@ -228,6 +228,25 @@ End
 
 	#tag Method, Flags = &h0
 		Sub Update()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Update the displayed data.
+		  
+		  If p_case Is Nil Then
+		    
+		    lblCreator.Text = ""
+		    lblStatus.Text = ""
+		    txtDesc.Text = "The given case object is Nil.  Can't do very much here."
+		    
+		  Else
+		    
+		    lblCreator.Text = "Creator:" + EndOfLine + Str( p_case.Creator )
+		    lblStatus.Text = "Status:" + EndOfLine + p_case.Status
+		    txtDesc.StyledText = p_case.StyledBody
+		    
+		  End If
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
