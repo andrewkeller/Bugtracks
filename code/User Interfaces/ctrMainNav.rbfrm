@@ -100,20 +100,41 @@ End
 		  
 		  // Adds the given item to the listbox.
 		  
-		  SuppressEvents = True
-		  
 		  lstNav.AddRow caption
 		  lstNav.RowTag( lstNav.LastIndex ) = view
-		  
-		  SuppressEvents = False
 		  
 		  If auto_select Then
 		    
 		    lstNav.ListIndex = lstNav.LastIndex
 		    
-		  ElseIf lstNav.ListCount = 1 Then
+		  End If
+		  
+		  ReportSelectionChanged
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub RemoveView(view As MainWindowView)
+		  // Created 4/15/2011 by Andrew Keller
+		  
+		  // Removes all views that match the given view object.
+		  
+		  For row As Integer = lstNav.ListCount -1 DownTo 0
 		    
-		    ReportSelectionChanged
+		    If lstNav.RowTag( row ) Is view Then
+		      
+		      lstNav.RemoveRow row
+		      
+		    End If
+		    
+		  Next
+		  
+		  If lstNav.ListIndex < 0 And lstNav.ListCount > 0 Then
+		    
+		    lstNav.ListIndex = 0
 		    
 		  End If
 		  
