@@ -20,7 +20,7 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h1000
-		Sub Constructor(r As VolatileBTRepo, case_object As PropertyListKFS)
+		Sub Constructor(r As VolatileBTRepo, case_object As PropertyListKFS, pk As String)
 		  
 		End Sub
 	#tag EndMethod

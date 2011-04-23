@@ -38,12 +38,12 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub LoadCaseObject(p As PropertyListKFS)
+		Sub LoadCaseObject(p As PropertyListKFS, pk As String)
 		  // Created 4/21/2011 by Andrew Keller
 		  
 		  // Inserts the given case object into the database.
 		  
-		  Dim c As New BTCase( Me, p )
+		  Dim c As New BTCase( Me, p, pk )
 		  
 		  // done.
 		  
@@ -88,7 +88,7 @@ Inherits VolatileBTRepo
 		        If name.Right( Len( ex ) ) = ex Then name = name.Left( Len( name ) - Len( ex ) )
 		        
 		        Try
-		          LoadCaseObject New PropertyListKFS( f )
+		          LoadCaseObject New PropertyListKFS( f ), name
 		        Catch err
 		        End Try
 		        
