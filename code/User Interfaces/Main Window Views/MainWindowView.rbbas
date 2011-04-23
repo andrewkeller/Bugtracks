@@ -7,6 +7,18 @@ Protected Interface MainWindowView
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function EventHook() As ViewEventHookMethod
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub EventHook(Assigns newHook As ViewEventHookMethod)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Update()
 		  
 		End Sub

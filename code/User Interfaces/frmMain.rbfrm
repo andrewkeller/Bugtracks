@@ -107,6 +107,8 @@ End
 		  
 		  If Not ( v Is Nil ) Then
 		    
+		    v.EventHook = AddressOf ViewEventHook
+		    
 		    Dim l, t, w, h As Integer
 		    l = NavBar.Left + NavBar.Width
 		    t = 0
@@ -142,6 +144,12 @@ End
 		  Next
 		  
 		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ViewEventHook(v As MainWindowView, eid As String)
 		  
 		End Sub
 	#tag EndMethod

@@ -388,6 +388,49 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function EventHook() As ViewEventHookMethod
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the current event hook.
+		  
+		  Return p_eh
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub EventHook(Assigns newHook As ViewEventHookMethod)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the event hook.
+		  
+		  p_eh = newHook
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ReportEvent(event_id As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Invokes the event hook with the given parameter.
+		  
+		  If Not ( p_eh Is Nil ) Then
+		    
+		    p_eh.Invoke Me, event_id
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Update()
 		  // Created 4/15/2011 by Andrew Keller
 		  
@@ -456,6 +499,10 @@ End
 		End Sub
 	#tag EndMethod
 
+
+	#tag Property, Flags = &h1
+		Protected p_eh As ViewEventHookMethod
+	#tag EndProperty
 
 	#tag Property, Flags = &h1
 		Protected p_repo As BTRepo

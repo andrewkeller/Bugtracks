@@ -54,6 +54,10 @@ Protected Module BTGlobals
 		End Function
 	#tag EndMethod
 
+	#tag DelegateDeclaration, Flags = &h0
+		Delegate Sub ViewEventHookMethod(v As MainWindowView, eid As String)
+	#tag EndDelegateDeclaration
+
 
 	#tag ViewBehavior
 		#tag ViewProperty
