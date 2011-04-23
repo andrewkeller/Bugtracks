@@ -130,7 +130,9 @@ End
 		  
 		  // Informs the user that the given event was not handled.
 		  
-		  MsgBox "Unsupported event in "+Introspection.GetType(v).Name+": '"+event_id+"'"
+		  #if DebugBuild then
+		    MsgBox "Unsupported event in "+Introspection.GetType(v).Name+": '"+event_id+"'"
+		  #endif
 		  
 		  // done.
 		  
