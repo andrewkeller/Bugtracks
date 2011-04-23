@@ -95,6 +95,55 @@ End
 
 
 	#tag Method, Flags = &h0
+		Function ActiveView() As MainWindowView
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the currently active view in this navigation bar.
+		  
+		  If lstNav.ListIndex < 0 Then
+		    
+		    Return Nil
+		    
+		  Else
+		    
+		    Return MainWindowView( lstNav.RowTag( lstNav.ListIndex ) )
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ActiveView(Assigns view As MainWindowView)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the active view in this navigation bar.  If the given
+		  // view does not exist, then a KeyNotFoundException is raised.
+		  
+		  For row As Integer = 0 To lstNav.ListCount -1
+		    
+		    If lstNav.RowTag( row ) Is view Then
+		      
+		      lstNav.ListIndex = row
+		      
+		      Return
+		      
+		    End If
+		    
+		  Next
+		  
+		  Dim err As New KeyNotFoundException
+		  err.Message = "Cannot select the given view ("+ObjectDescriptionKFS(view)+") because it was not found in the list."
+		  Raise err
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub AddView(caption As String, view As MainWindowView, auto_select As Boolean = False)
 		  // Created 4/15/2011 by Andrew Keller
 		  
