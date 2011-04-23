@@ -187,6 +187,12 @@ End
 		      
 		      NavBar.RemoveView v
 		      
+		    ElseIf event_id = kViewEvent_UpdateLabel Then
+		      
+		      Dim h As String = ctrNewCase( v ).Headline
+		      If h = "" Then h = "New Case"
+		      NavBar.Label( v ) = h
+		      
 		    ElseIf event_id = kViewEvent_Submit Then
 		      
 		      NavBar.RemoveView v
