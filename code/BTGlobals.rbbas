@@ -59,6 +59,16 @@ Protected Module BTGlobals
 	#tag EndDelegateDeclaration
 
 
+	#tag Constant, Name = kViewEvent_Cancel, Type = String, Dynamic = False, Default = \"cancel", Scope = Public
+	#tag EndConstant
+
+	#tag Constant, Name = kViewEvent_NewCase, Type = String, Dynamic = False, Default = \"newcase", Scope = Public
+	#tag EndConstant
+
+	#tag Constant, Name = kViewEvent_Submit, Type = String, Dynamic = False, Default = \"submit", Scope = Public
+	#tag EndConstant
+
+
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="Index"

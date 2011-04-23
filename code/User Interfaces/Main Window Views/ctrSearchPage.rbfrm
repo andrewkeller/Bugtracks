@@ -279,3 +279,17 @@ End
 
 #tag EndWindowCode
 
+#tag Events cmdNewCase
+	#tag Event
+		Sub Action()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Report that the user pressed this button.
+		  
+		  ReportEvent kViewEvent_NewCase
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents

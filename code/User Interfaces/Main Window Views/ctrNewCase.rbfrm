@@ -602,3 +602,31 @@ End
 
 #tag EndWindowCode
 
+#tag Events cmdSubmit
+	#tag Event
+		Sub Action()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Report that the user pressed this button.
+		  
+		  ReportEvent kViewEvent_Submit
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events cmdCancel
+	#tag Event
+		Sub Action()
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Report that the user pressed this button.
+		  
+		  ReportEvent kViewEvent_Cancel
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
