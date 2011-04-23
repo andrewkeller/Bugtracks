@@ -166,6 +166,60 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function Label(forView As MainWindowView) As String
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Returns the current label for the given view.  If the given
+		  // view does not exist, then a KeyNotFoundException is raised.
+		  
+		  For row As Integer = 0 To lstNav.ListCount -1
+		    
+		    If lstNav.RowTag( row ) Is forView Then
+		      
+		      Return lstNav.List( row )
+		      
+		    End If
+		    
+		  Next
+		  
+		  Dim err As New KeyNotFoundException
+		  err.Message = "Cannot get the label for the given view ("+ObjectDescriptionKFS(forView)+") because it was not found in the list."
+		  Raise err
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Label(forView As MainWindowView, Assigns newValue As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Sets the label for the given view.  If the given view
+		  // does not exist, then a KeyNotFoundException is raised.
+		  
+		  For row As Integer = 0 To lstNav.ListCount -1
+		    
+		    If lstNav.RowTag( row ) Is forView Then
+		      
+		      lstNav.List( row ) = newValue
+		      
+		      Return
+		      
+		    End If
+		    
+		  Next
+		  
+		  Dim err As New KeyNotFoundException
+		  err.Message = "Cannot set the label for the given view ("+ObjectDescriptionKFS(forView)+") because it was not found in the list."
+		  Raise err
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub RemoveView(view As MainWindowView)
 		  // Created 4/15/2011 by Andrew Keller
 		  
