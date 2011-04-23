@@ -234,8 +234,8 @@ End
 		  
 		  If p_case Is Nil Then
 		    
-		    lblCreator.Text = ""
-		    lblStatus.Text = ""
+		    lblCreator.Text = "Creator:" + EndOfLine + "Nil"
+		    lblStatus.Text = "Status:" + EndOfLine + "Nil"
 		    txtDesc.Text = "The given case object is Nil.  Can't do very much here."
 		    
 		  Else
