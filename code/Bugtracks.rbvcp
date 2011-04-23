@@ -63,6 +63,7 @@ Class=UnitTestExceptionKFS;Libraries/RB Common KFS BSD/Common/Utilities/Unit Tes
 Window=UnitTestWindowKFS;Libraries/RB Common KFS BSD/Common/Utilities/Unit Testing Framework/UnitTestWindowKFS.rbfrm;&hEF2EAC3;&h78C882DA;false
 Class=BTPerson;Back End/BTPerson.rbbas;&h672C7250;&h6472DA6D;false
 Window=ctrNewCase;User Interfaces/Main Window Views/ctrNewCase.rbfrm;&h170558C1;&h1A50D061;false
+Window=ctrViewCase;User Interfaces/Main Window Views/ctrViewCase.rbfrm;&h2612D289;&h1A50D061;false
 AppMenuBar=MainMenu
 MajorVersion=0
 MinorVersion=0
