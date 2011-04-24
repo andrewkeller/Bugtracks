@@ -88,61 +88,35 @@ Inherits SharedBTRepoCode
 		  
 		  // Next, insert the new data.
 		  
-		  Dim sql As PreparedSQLStatement = r.dbprep( "INSERT INTO ? ( ?, ?, ?, ?, ?, ? ) VALUES ( ?, ?, ?, ?, ?, ? )" )
+		  Dim dbr As New DatabaseRecord
+		  dbr.BlobColumn( kDB_CasePK ) = new_pk
+		  dbr.BlobColumn( kDB_CaseHeadline ) = new_headline
+		  dbr.BlobColumn( kDB_CaseCategory ) = new_category
+		  dbr.BlobColumn( kDB_CaseCreator ) = Str( new_creator, "" )
+		  dbr.Int64Column( kDB_CaseCreationDate ) = new_date.TotalSeconds
+		  dbr.Int64Column( kDB_CaseModificationDate ) = new_date.TotalSeconds
+		  r.dbinsert kDB_Cases, dbr
 		  
-		  sql.SQLExecute _
-		  kDB_Cases, _
-		  kDB_CasePK, _
-		  kDB_CaseHeadline, _
-		  kDB_CaseCategory, _
-		  kDB_CaseCreator, _
-		  kDB_CaseCreationDate, _
-		  kDB_CaseModificationDate, _
-		  new_pk, _
-		  new_headline, _
-		  new_category, _
-		  Str( new_creator, "" ), _
-		  new_date, _
-		  new_date
+		  dbr = New DatabaseRecord
+		  dbr.BlobColumn( kDB_StatusRevisionCase ) = new_pk
+		  dbr.BlobColumn( kDB_StatusRevisionStatus ) = new_status
+		  dbr.BlobColumn( kDB_StatusRevisionAuthor ) = Str( new_creator, "" )
+		  dbr.Int64Column( kDB_StatusRevisionDate ) = new_date.TotalSeconds
+		  r.dbinsert kDB_StatusRevisions, dbr
 		  
-		  sql = r.dbprep( "INSERT INTO ? ( ?, ?, ?, ? ) VALUES ( ?, ?, ?, ? )" )
+		  dbr = New DatabaseRecord
+		  dbr.BlobColumn( kDB_DiscussionCase ) = new_pk
+		  dbr.BlobColumn( kDB_DiscussionAuthor ) = Str( new_creator, "" )
+		  dbr.BlobColumn( kDB_DiscussionType ) = new_msgtype
+		  dbr.BlobColumn( kDB_DiscussionText ) = new_description
+		  dbr.Int64Column( kDB_DiscussionDate ) = new_date.TotalSeconds
+		  dbr.Int64Column( kDB_DiscussionModDate ) = new_date.TotalSeconds
+		  r.dbinsert kDB_Discussions, dbr
 		  
-		  sql.SQLExecute _
-		  kDB_StatusRevisions, _
-		  kDB_StatusRevisionCase, _
-		  kDB_StatusRevisionStatus, _
-		  kDB_StatusRevisionAuthor, _
-		  kDB_StatusRevisionDate, _
-		  new_pk, _
-		  new_status, _
-		  Str( new_creator, "" ), _
-		  new_date
-		  
-		  sql = r.dbprep( "INSERT INTO ? ( ?, ?, ?, ?, ?, ? ) VALUES ( ?, ?, ?, ?, ?, ? )" )
-		  
-		  sql.SQLExecute _
-		  kDB_Discussions, _
-		  kDB_DiscussionCase, _
-		  kDB_DiscussionAuthor, _
-		  kDB_DiscussionType, _
-		  kDB_DiscussionText, _
-		  kDB_DiscussionDate, _
-		  kDB_DiscussionModDate, _
-		  new_pk, _
-		  Str( new_creator, "" ), _
-		  new_msgtype, _
-		  new_description, _
-		  new_date, _
-		  new_date
-		  
-		  sql = r.dbprep( "INSERT INTO ? ( ?, ? ) VALUES ( ?, ? )" )
-		  
-		  sql.SQLExecute _
-		  kDB_Favorites, _
-		  kDB_FavoriteCase, _
-		  kDB_FavoritePerson, _
-		  new_pk, _
-		  new_status
+		  dbr = New DatabaseRecord
+		  dbr.BlobColumn( kDB_FavoriteCase ) = new_pk
+		  dbr.BlobColumn( kDB_FavoritePerson ) = Str( new_creator, "" )
+		  r.dbinsert kDB_Favorites, dbr
 		  
 		  Return New BTCase( r, new_pk )
 		  
