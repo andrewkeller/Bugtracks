@@ -117,6 +117,19 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
+		Protected Sub dbinsert(table_name As String, dbr As DatabaseRecord)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // Inserts the given record into the database.
+		  
+		  p_db.InsertRecord table_name, dbr
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
 		Protected Function dbprep(sql As String) As PreparedSQLStatement
 		  // Created 4/23/2011 by Andrew Keller
 		  

@@ -43,6 +43,27 @@ Protected Class SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
+		Protected Sub dbinsert(table_name As String, dbr As DatabaseRecord)
+		  // Created 4/20/2011 by Andrew Keller
+		  
+		  // This method exists only to allow all classes
+		  // that inherit from this class access to this method,
+		  // which is currently only implemented in VolatileBTRepo.
+		  
+		  // Since this method is currently not implemented
+		  // in this class, raise an exception.
+		  
+		  Dim e As New UnsupportedFormatException
+		  e.ErrorNumber = 1
+		  e.Message = "The "+CurrentMethodName+" method is not available in this class."
+		  Raise e
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
 		Protected Function dbprep(sql As String) As PreparedSQLStatement
 		  // Created 4/23/2011 by Andrew Keller
 		  
