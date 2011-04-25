@@ -22,10 +22,7 @@ Inherits SharedBTRepoCode
 		  p_repo = r
 		  p_caseid = case_id
 		  
-		  inval_case = True
-		  inval_discussion = True
-		  inval_favorites = True
-		  inval_status = True
+		  Invalidate
 		  
 		  // done.
 		  
@@ -132,6 +129,18 @@ Inherits SharedBTRepoCode
 
 	#tag Method, Flags = &h0
 		Sub Invalidate()
+		  // Created 4/25/2011 by Andrew Keller
+		  
+		  // Causes the data stored in this object to be
+		  // considered out-of-date, and will be reloaded
+		  // the next time an accessor is called.
+		  
+		  inval_case = True
+		  inval_discussion = True
+		  inval_favorites = True
+		  inval_status = True
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
