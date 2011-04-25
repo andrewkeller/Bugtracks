@@ -117,6 +117,7 @@ Inherits SharedBTRepoCode
 		    dbr = New DatabaseRecord
 		    dbr.BlobColumn( kDB_FavoriteCase ) = new_pk
 		    dbr.BlobColumn( kDB_FavoritePerson ) = Str( new_creator, "" )
+		    dbr.Int64Column( kDB_FavoriteDate ) = new_date.TotalSeconds
 		    r.dbinsert kDB_Favorites, dbr
 		  End If
 		  

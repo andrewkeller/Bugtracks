@@ -102,10 +102,11 @@ Inherits SharedBTRepoCode
 		    kDB_DiscussionModDate, _
 		    kDB_DiscussionDate )
 		    
-		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, PRIMARY KEY ( %, % ) )", _
+		    dbexec subst( "CREATE TABLE % ( % varchar, % varchar, % varchar, PRIMARY KEY ( %, % ) )", _
 		    kDB_Favorites, _
 		    kDB_FavoriteCase, _
 		    kDB_FavoritePerson, _
+		    kDB_FavoriteDate, _
 		    kDB_FavoriteCase, _
 		    kDB_FavoritePerson )
 		    

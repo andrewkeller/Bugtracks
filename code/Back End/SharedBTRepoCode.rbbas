@@ -320,6 +320,9 @@ Protected Class SharedBTRepoCode
 	#tag Constant, Name = kDB_FavoriteCase, Type = String, Dynamic = False, Default = \"caseid", Scope = Protected
 	#tag EndConstant
 
+	#tag Constant, Name = kDB_FavoriteDate, Type = String, Dynamic = False, Default = \"ts", Scope = Protected
+	#tag EndConstant
+
 	#tag Constant, Name = kDB_FavoritePerson, Type = String, Dynamic = False, Default = \"person", Scope = Protected
 	#tag EndConstant
 
