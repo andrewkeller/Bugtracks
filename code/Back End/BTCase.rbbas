@@ -130,10 +130,40 @@ Inherits SharedBTRepoCode
 		End Function
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub Invalidate()
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h1000
 		 Shared Function LoadExistingCase(r As VolatileBTRepo, case_object As PropertyListKFS, pk As String) As BTCase
 		  
 		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub load_case(force_reload As Boolean = False)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub load_discussion(force_reload As Boolean = False)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub load_favorites(force_reload As Boolean = False)
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub load_status(force_reload As Boolean = False)
+		  
+		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
