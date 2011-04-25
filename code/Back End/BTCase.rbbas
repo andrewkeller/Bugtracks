@@ -13,19 +13,21 @@ Inherits SharedBTRepoCode
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h1001
-		Protected Sub Constructor()
-		  // Created 4/23/2011 by Andrew Keller
-		  
-		  // Basic constructor.  Only accessible from this class.
-		  
-		  // done.
-		  
-		End Sub
-	#tag EndMethod
-
 	#tag Method, Flags = &h1000
 		Sub Constructor(r As VolatileBTRepo, case_id As String)
+		  // Created 4/23/2011 by Andrew Keller
+		  
+		  // A constructor that takes a repository and a case id.
+		  
+		  p_repo = r
+		  p_caseid = case_id
+		  
+		  inval_case = True
+		  inval_discussion = True
+		  inval_favorites = True
+		  inval_status = True
+		  
+		  // done.
 		  
 		End Sub
 	#tag EndMethod
@@ -151,6 +153,91 @@ Inherits SharedBTRepoCode
 		  
 		End Function
 	#tag EndMethod
+
+
+	#tag Property, Flags = &h1
+		Protected case_category As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_creator As BTPerson
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_date As Date
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_disc_author() As BTPerson
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_disc_date() As Date
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_disc_moddate() As Date
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_disc_text() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_disc_type() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_favorite_by() As BTPerson
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_favorite_date() As BTPerson
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_headline As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_moddate As Date
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_status_committer() As BTPerson
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_status_date As Date
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected case_status_value() As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected inval_case As Boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected inval_discussion As Boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected inval_favorites As Boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected inval_status As Boolean
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected p_caseid As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected p_repo As VolatileBTRepo
+	#tag EndProperty
 
 
 	#tag ViewBehavior
