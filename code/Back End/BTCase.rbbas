@@ -113,10 +113,12 @@ Inherits SharedBTRepoCode
 		  dbr.Int64Column( kDB_DiscussionModDate ) = new_date.TotalSeconds
 		  r.dbinsert kDB_Discussions, dbr
 		  
-		  dbr = New DatabaseRecord
-		  dbr.BlobColumn( kDB_FavoriteCase ) = new_pk
-		  dbr.BlobColumn( kDB_FavoritePerson ) = Str( new_creator, "" )
-		  r.dbinsert kDB_Favorites, dbr
+		  If auto_favorite Then
+		    dbr = New DatabaseRecord
+		    dbr.BlobColumn( kDB_FavoriteCase ) = new_pk
+		    dbr.BlobColumn( kDB_FavoritePerson ) = Str( new_creator, "" )
+		    r.dbinsert kDB_Favorites, dbr
+		  End If
 		  
 		  Return New BTCase( r, new_pk )
 		  
