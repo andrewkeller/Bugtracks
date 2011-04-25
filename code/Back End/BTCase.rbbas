@@ -135,6 +135,8 @@ Inherits SharedBTRepoCode
 		  // considered out-of-date, and will be reloaded
 		  // the next time an accessor is called.
 		  
+		  p_case_load_error = False
+		  
 		  inval_case = True
 		  inval_discussion = True
 		  inval_favorites = True
@@ -272,6 +274,10 @@ Inherits SharedBTRepoCode
 
 	#tag Property, Flags = &h1
 		Protected p_caseid As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected p_case_load_error As Boolean
 	#tag EndProperty
 
 	#tag Property, Flags = &h1
