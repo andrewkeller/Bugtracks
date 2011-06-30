@@ -45,6 +45,7 @@ Begin ContainerControl ctrViewCase Implements MainWindowView
       Selectable      =   False
       TabIndex        =   0
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Creator:\rSomeone"
       TextAlign       =   0
       TextColor       =   0
@@ -79,6 +80,7 @@ Begin ContainerControl ctrViewCase Implements MainWindowView
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Status:\rIn Progress"
       TextAlign       =   0
       TextColor       =   0

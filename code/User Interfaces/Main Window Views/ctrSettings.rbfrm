@@ -45,6 +45,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       Selectable      =   False
       TabIndex        =   0
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Repository-Specific Settings for /some/path"
       TextAlign       =   0
       TextColor       =   &h000000
@@ -75,6 +76,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       Scope           =   0
       TabIndex        =   3
       TabPanelIndex   =   0
+      TabStop         =   True
       Top             =   46
       Value           =   0
       Visible         =   True
@@ -101,6 +103,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   3
+         TabStop         =   True
          Text            =   "This folder does not appear to be a valid Bugtracks data pool."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -166,6 +169,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   1
+         TabStop         =   True
          Text            =   "For some reason, the repository object that this window received to display is Nil.\r\rNot much can be done in this state."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -293,6 +297,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   2
          TabPanelIndex   =   2
+         TabStop         =   True
          Text            =   "This Bugtracks data pool is currently completely in memory."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -327,6 +332,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   4
+         TabStop         =   True
          Text            =   "There are currently no settings at this level."
          TextAlign       =   0
          TextColor       =   &h000000

@@ -44,6 +44,7 @@ Begin ContainerControl ctrStartPage Implements MainWindowView
       Scope           =   0
       TabIndex        =   0
       TabPanelIndex   =   0
+      TabStop         =   True
       Top             =   33
       Visible         =   True
       Width           =   457
@@ -69,6 +70,7 @@ Begin ContainerControl ctrStartPage Implements MainWindowView
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   0
+         TabStop         =   True
          Text            =   "Welcome to Bugtracks, the dirt-simple bug tracker.\r\rTo create a new case, begin by searching for it.  Use shorter phrases that are more likely to generate a match, as different people use different terminology.\r\rIf you cannot find your case, then the ability to create a new case will present itself after you search."
          TextAlign       =   0
          TextColor       =   &h000000

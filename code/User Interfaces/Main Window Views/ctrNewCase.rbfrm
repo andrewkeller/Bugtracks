@@ -45,6 +45,7 @@ Begin ContainerControl ctrNewCase Implements MainWindowView
       Selectable      =   False
       TabIndex        =   0
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Creator:"
       TextAlign       =   2
       TextColor       =   &h000000
@@ -121,6 +122,7 @@ Begin ContainerControl ctrNewCase Implements MainWindowView
       Selectable      =   False
       TabIndex        =   2
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Headline:"
       TextAlign       =   2
       TextColor       =   &h000000
@@ -197,6 +199,7 @@ Begin ContainerControl ctrNewCase Implements MainWindowView
       Selectable      =   False
       TabIndex        =   4
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Category:"
       TextAlign       =   2
       TextColor       =   &h000000
@@ -273,6 +276,7 @@ Begin ContainerControl ctrNewCase Implements MainWindowView
       Selectable      =   False
       TabIndex        =   6
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Status:"
       TextAlign       =   2
       TextColor       =   &h000000
@@ -349,6 +353,7 @@ Begin ContainerControl ctrNewCase Implements MainWindowView
       Selectable      =   False
       TabIndex        =   8
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Description:"
       TextAlign       =   2
       TextColor       =   &h000000
