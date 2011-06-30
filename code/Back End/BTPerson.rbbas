@@ -1,5 +1,6 @@
 #tag Class
 Protected Class BTPerson
+Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
 		Sub Constructor(new_name_email As String)
 		  // Created 4/21/2011 by Andrew Keller
