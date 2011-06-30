@@ -194,12 +194,12 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ListCasesForQuery(q As PresetQueries) As BTSet
+		Function ListCasesForQuery(q As PresetQueries) As BTCaseSet
 		  // Created 4/20/2011 by Andrew Keller
 		  
 		  // Returns the set of cases for the given query.
 		  
-		  Return BTSet.NewFromQuery( Me, q )
+		  Return BTCaseSet.NewFromQuery( Me, q )
 		  
 		  // done.
 		  
@@ -207,12 +207,12 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ListCasesWithKeywords(search_str As String) As BTSet
+		Function ListCasesWithKeywords(search_str As String) As BTCaseSet
 		  // Created 4/20/2011 by Andrew Keller
 		  
 		  // Returns the set of cases for the given query.
 		  
-		  Return BTSet.NewFromQuery( Me, search_str )
+		  Return BTCaseSet.NewFromQuery( Me, search_str )
 		  
 		  // done.
 		  

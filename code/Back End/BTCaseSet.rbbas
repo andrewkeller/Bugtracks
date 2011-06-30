@@ -19,13 +19,13 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		 Shared Function NewFromQuery(r As VolatileBTRepo, q As PresetQueries) As BTSet
+		 Shared Function NewFromQuery(r As VolatileBTRepo, q As PresetQueries) As BTCaseSet
 		  
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h1000
-		 Shared Function NewFromQuery(r As VolatileBTRepo, kws As String) As BTSet
+		 Shared Function NewFromQuery(r As VolatileBTRepo, kws As String) As BTCaseSet
 		  
 		End Function
 	#tag EndMethod

@@ -263,7 +263,7 @@ End
 	#tag EndProperty
 
 	#tag Property, Flags = &h1
-		Protected p_rsltset As BTSet
+		Protected p_rsltset As BTCaseSet
 	#tag EndProperty
 
 
