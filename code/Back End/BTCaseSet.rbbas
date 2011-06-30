@@ -1,5 +1,5 @@
 #tag Class
-Protected Class BTSet
+Protected Class BTCaseSet
 Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
 		Function CaseCount() As Integer
