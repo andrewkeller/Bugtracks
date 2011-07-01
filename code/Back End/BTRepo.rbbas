@@ -172,8 +172,8 @@ Inherits VolatileBTRepo
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Sub ScanForObjects(within_dir As FolderItem, ByRef config_file As FolderItem, ByRef case_files() As FolderItem)
+	#tag Method, Flags = &h1
+		Protected Sub ScanForObjects(within_dir As FolderItem, ByRef config_file As FolderItem, ByRef case_files() As FolderItem)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Finds all of the Bugtracks objects stored in the given folder.
