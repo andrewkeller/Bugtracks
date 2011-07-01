@@ -200,7 +200,7 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function ListCasesForQuery(q As PresetQueries) As BTCaseSet
+		Function ListCasesForQuery(q As PresetCaseQueries) As BTCaseSet
 		  // Created 4/20/2011 by Andrew Keller
 		  
 		  // Returns the set of cases for the given query.

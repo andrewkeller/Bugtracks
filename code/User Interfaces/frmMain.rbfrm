@@ -87,7 +87,7 @@ End
 		  FitAndEmbed c
 		  NavBar.AddView "Search", c
 		  
-		  For Each q As BTRepo.PresetQueries In BTRepo.ListPresetQueries
+		  For Each q As BTRepo.PresetCaseQueries In BTRepo.ListPresetCaseQueries
 		    
 		    c = New ctrSearchResultsPage( r, q )
 		    FitAndEmbed c

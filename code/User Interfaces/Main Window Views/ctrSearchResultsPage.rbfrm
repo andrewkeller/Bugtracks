@@ -126,7 +126,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Constructor(r As BTRepo, q As BTRepo.PresetQueries)
+		Sub Constructor(r As BTRepo, q As BTRepo.PresetCaseQueries)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Initializes this class.
@@ -204,7 +204,7 @@ End
 		  
 		  // Refresh the information in this container.
 		  
-		  If p_rsltpqry <> BTRepo.PresetQueries.Null Then
+		  If p_rsltpqry <> BTRepo.PresetCaseQueries.Null Then
 		    
 		    lblHead.Caption = BTRepo.Str( p_rsltpqry )
 		    
@@ -259,7 +259,7 @@ End
 	#tag EndProperty
 
 	#tag Property, Flags = &h1
-		Protected p_rsltpqry As BTRepo.PresetQueries
+		Protected p_rsltpqry As BTRepo.PresetCaseQueries
 	#tag EndProperty
 
 	#tag Property, Flags = &h1

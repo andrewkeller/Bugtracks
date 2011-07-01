@@ -152,18 +152,18 @@ Protected Class SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		 Shared Function ListPresetQueries() As PresetQueries()
+		 Shared Function ListPresetCaseQueries() As PresetCaseQueries()
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Returns the list of all preset queries.
 		  
 		  Return Array ( _
-		  PresetQueries.TopCases, _
-		  PresetQueries.Newest, _
-		  PresetQueries.RecentlyActive, _
-		  PresetQueries.MyFavorites, _
-		  PresetQueries.MyCases, _
-		  PresetQueries.ParticipatingIn )
+		  PresetCaseQueries.TopCases, _
+		  PresetCaseQueries.Newest, _
+		  PresetCaseQueries.RecentlyActive, _
+		  PresetCaseQueries.MyFavorites, _
+		  PresetCaseQueries.MyCases, _
+		  PresetCaseQueries.ParticipatingIn )
 		  
 		  // done.
 		  
@@ -171,29 +171,29 @@ Protected Class SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		 Shared Function ShortStr(q As PresetQueries) As String
+		 Shared Function ShortStr(q As PresetCaseQueries) As String
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Returns a short string version of the description of the given query.
 		  
 		  Select Case q
 		    
-		  Case PresetQueries.TopCases
+		  Case PresetCaseQueries.TopCases
 		    Return "Top Cases"
 		    
-		  Case PresetQueries.Newest
+		  Case PresetCaseQueries.Newest
 		    Return "Newest"
 		    
-		  Case PresetQueries.RecentlyActive
+		  Case PresetCaseQueries.RecentlyActive
 		    Return "Recently Active"
 		    
-		  Case PresetQueries.MyFavorites
+		  Case PresetCaseQueries.MyFavorites
 		    Return "My Favorites"
 		    
-		  Case PresetQueries.MyCases
+		  Case PresetCaseQueries.MyCases
 		    Return "My Cases"
 		    
-		  Case PresetQueries.ParticipatingIn
+		  Case PresetCaseQueries.ParticipatingIn
 		    Return "Participating In"
 		    
 		  Else
@@ -207,29 +207,29 @@ Protected Class SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		 Shared Function Str(q As PresetQueries) As String
+		 Shared Function Str(q As PresetCaseQueries) As String
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Returns a string version of the description of the given query.
 		  
 		  Select Case q
 		    
-		  Case PresetQueries.TopCases
+		  Case PresetCaseQueries.TopCases
 		    Return "Top Cases"
 		    
-		  Case PresetQueries.Newest
+		  Case PresetCaseQueries.Newest
 		    Return "Newest Cases"
 		    
-		  Case PresetQueries.RecentlyActive
+		  Case PresetCaseQueries.RecentlyActive
 		    Return "Recently Active Cases"
 		    
-		  Case PresetQueries.MyFavorites
+		  Case PresetCaseQueries.MyFavorites
 		    Return "My Favorite Cases"
 		    
-		  Case PresetQueries.MyCases
+		  Case PresetCaseQueries.MyCases
 		    Return "My Cases"
 		    
-		  Case PresetQueries.ParticipatingIn
+		  Case PresetCaseQueries.ParticipatingIn
 		    Return "Cases I'm Participating In"
 		    
 		  Else
@@ -348,7 +348,7 @@ Protected Class SharedBTRepoCode
 	#tag EndConstant
 
 
-	#tag Enum, Name = PresetQueries, Flags = &h0
+	#tag Enum, Name = PresetCaseQueries, Flags = &h0
 		Null
 		  TopCases
 		  Newest
