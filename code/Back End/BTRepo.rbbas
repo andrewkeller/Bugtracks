@@ -9,6 +9,8 @@ Inherits VolatileBTRepo
 		  
 		  p_dir = Nil
 		  
+		  Super.Constructor
+		  
 		  Reload
 		  
 		  // done.
@@ -23,6 +25,8 @@ Inherits VolatileBTRepo
 		  // Load the entire given directory into this class.
 		  
 		  p_dir = dir
+		  
+		  Super.Constructor
 		  
 		  Reload
 		  
