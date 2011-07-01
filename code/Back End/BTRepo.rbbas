@@ -83,12 +83,6 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub InitializeRepoFolder()
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Sub LoadCaseObject(p As PropertyListKFS, pk As String)
 		  // Created 4/21/2011 by Andrew Keller
 		  
@@ -153,12 +147,6 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function RepoFolderInitialized() As Boolean
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Function RepositoryFolder() As FolderItem
 		  // Created 4/15/2011 by Andrew Keller
 		  
@@ -180,12 +168,6 @@ Inherits VolatileBTRepo
 		  p_dir = newFolder
 		  
 		  // done.
-		  
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub SaveChanges(pgd As ProgressDelegateKFS = Nil)
 		  
 		End Sub
 	#tag EndMethod
