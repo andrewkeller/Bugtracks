@@ -3,13 +3,19 @@ Protected Class VolatileBTRepo
 Inherits SharedBTRepoCode
 	#tag Method, Flags = &h0
 		Sub Clear()
-		  // Created 4/20/2011 by Andrew Keller
+		  // Created 7/1/2011 by Andrew Keller
 		  
 		  // Clears the local database.
 		  
-		  // For now, just reinitialize.
-		  
-		  dbinit
+		  For Each table As String In Array( _
+		    kDB_Cases, _
+		    kDB_StatusRevisions, _
+		    kDB_Discussions, _
+		    kDB_Favorites )
+		    
+		    dbexec subst( "DELETE FROM %", table )
+		    
+		  Next
 		  
 		  // done.
 		  
