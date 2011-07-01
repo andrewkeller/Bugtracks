@@ -2,6 +2,53 @@
 Protected Class BTRepo
 Inherits VolatileBTRepo
 	#tag Method, Flags = &h0
+		Sub Clear()
+		  // Created 7/1/2011 by Andrew Keller
+		  
+		  // Adding onto VolatileBTRepo's Clear method.
+		  
+		  Super.Clear
+		  
+		  // Also clear the database on disk.
+		  
+		  If Not ( p_dir Is Nil ) Then
+		    If p_dir.Exists Then
+		      If p_dir.Directory Then
+		        
+		        Dim something_got_deleted As Boolean = False
+		        
+		        Do
+		          
+		          For idx As Integer = 1 To p_dir.Count
+		            
+		            Dim c As FolderItem = p_dir.Item( idx )
+		            
+		            If Not ( c Is Nil ) Then
+		              If Not c.Directory Then
+		                If c.Name.Right( Len( "." + kFileExtension ) ) = "." + kFileExtension _
+		                  And c.Name <> kSettingsFileBasename + "." + kFileExtension Then
+		                  
+		                  c.Delete
+		                  
+		                  something_got_deleted = True
+		                  
+		                End If
+		              End If
+		            End If
+		          Next
+		          
+		        Loop Until something_got_deleted = False
+		        
+		      End If
+		    End If
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Constructor()
 		  // Created 4/15/2011 by Andrew Keller
 		  
@@ -63,7 +110,7 @@ Inherits VolatileBTRepo
 		  // except it doesn't take a FolderItem
 		  // argument or reinitialize the properties.
 		  
-		  Clear
+		  Super.Clear  // Do NOT clear the database on disk!
 		  
 		  // First, we need to get a list of all the
 		  // objects inside the pool directory.
