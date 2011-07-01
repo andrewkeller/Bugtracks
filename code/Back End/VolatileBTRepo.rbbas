@@ -212,7 +212,7 @@ Inherits SharedBTRepoCode
 		  
 		  // Returns the set of cases for the given query.
 		  
-		  Return BTCaseSet.NewFromQuery( Me, search_str )
+		  Return BTCaseSet.NewFromSearch( Me, search_str )
 		  
 		  // done.
 		  
