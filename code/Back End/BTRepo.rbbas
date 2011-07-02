@@ -150,6 +150,8 @@ Inherits VolatileBTRepo
 		  // except it doesn't take a FolderItem
 		  // argument or reinitialize the properties.
 		  
+		  // This is the opposite of the Reload method.
+		  
 		  Super.Clear  // Do NOT clear the database on disk!
 		  
 		  // First, we need to get a list of all the
@@ -214,6 +216,18 @@ Inherits VolatileBTRepo
 		  p_dir = newFolder
 		  
 		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Resave(aggressive As Boolean = False)
+		  // Created 7/2/2011 by Andrew Keller
+		  
+		  // Resaves the repository to the data pool,
+		  // possibly blowing away anything in the way (aggressive).
+		  
+		  // This is the opposite of the Reload method.
 		  
 		End Sub
 	#tag EndMethod

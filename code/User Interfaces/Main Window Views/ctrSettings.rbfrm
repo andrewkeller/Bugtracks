@@ -76,7 +76,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       TabIndex        =   3
       TabPanelIndex   =   0
       Top             =   46
-      Value           =   3
+      Value           =   2
       Visible         =   True
       Width           =   438
       Begin Label Label1
@@ -308,6 +308,37 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Visible         =   True
          Width           =   418
       End
+      Begin PushButton PushButton5
+         AutoDeactivate  =   True
+         Bold            =   ""
+         ButtonStyle     =   0
+         Cancel          =   ""
+         Caption         =   "Overwrite what's there to make it valid"
+         Default         =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "pgpMain"
+         Italic          =   ""
+         Left            =   20
+         LockBottom      =   ""
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   ""
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   3
+         TabPanelIndex   =   3
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0
+         TextUnit        =   0
+         Top             =   171
+         Underline       =   ""
+         Visible         =   True
+         Width           =   286
+      End
    End
 End
 #tag EndWindow
@@ -514,6 +545,20 @@ End
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Instructs the repository object to initialize the folder.
+		  
+		  MsgBox "Eeek!  I don't know what to do!" + EndOfLine + EndOfLine + "Note to self: This code needs to get written."
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton5
+	#tag Event
+		Sub Action()
+		  // Created 7/1/2011 by Andrew Keller
+		  
+		  // Instructs the repository object to open a new repository.
 		  
 		  MsgBox "Eeek!  I don't know what to do!" + EndOfLine + EndOfLine + "Note to self: This code needs to get written."
 		  
