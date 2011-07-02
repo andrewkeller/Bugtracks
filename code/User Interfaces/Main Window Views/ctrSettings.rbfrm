@@ -45,7 +45,6 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       Selectable      =   False
       TabIndex        =   0
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Repository-Specific Settings for /some/path"
       TextAlign       =   0
       TextColor       =   &h000000
@@ -76,9 +75,8 @@ Begin ContainerControl ctrSettings Implements MainWindowView
       Scope           =   0
       TabIndex        =   3
       TabPanelIndex   =   0
-      TabStop         =   True
       Top             =   46
-      Value           =   0
+      Value           =   3
       Visible         =   True
       Width           =   438
       Begin Label Label1
@@ -103,7 +101,6 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   3
-         TabStop         =   True
          Text            =   "This folder does not appear to be a valid Bugtracks data pool."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -115,37 +112,6 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Underline       =   ""
          Visible         =   True
          Width           =   418
-      End
-      Begin PushButton PushButton1
-         AutoDeactivate  =   True
-         Bold            =   ""
-         ButtonStyle     =   0
-         Cancel          =   ""
-         Caption         =   "Make this folder a valid Bugtracks data pool"
-         Default         =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "pgpMain"
-         Italic          =   ""
-         Left            =   20
-         LockBottom      =   ""
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   ""
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   1
-         TabPanelIndex   =   3
-         TabStop         =   True
-         TextFont        =   "System"
-         TextSize        =   0
-         TextUnit        =   0
-         Top             =   107
-         Underline       =   ""
-         Visible         =   True
-         Width           =   334
       End
       Begin Label Label2
          AutoDeactivate  =   True
@@ -169,7 +135,6 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   1
-         TabStop         =   True
          Text            =   "For some reason, the repository object that this window received to display is Nil.\r\rNot much can be done in this state."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -189,7 +154,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Cancel          =   ""
          Caption         =   "Open a different folder"
          Default         =   ""
-         Enabled         =   False
+         Enabled         =   True
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
@@ -208,7 +173,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          TextFont        =   "System"
          TextSize        =   0
          TextUnit        =   0
-         Top             =   171
+         Top             =   107
          Underline       =   ""
          Visible         =   True
          Width           =   193
@@ -220,7 +185,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Cancel          =   ""
          Caption         =   "Open..."
          Default         =   ""
-         Enabled         =   False
+         Enabled         =   True
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
@@ -251,7 +216,7 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Cancel          =   ""
          Caption         =   "Save As..."
          Default         =   ""
-         Enabled         =   False
+         Enabled         =   True
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
@@ -297,7 +262,6 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   2
          TabPanelIndex   =   2
-         TabStop         =   True
          Text            =   "This Bugtracks data pool is currently completely in memory."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -332,7 +296,6 @@ Begin ContainerControl ctrSettings Implements MainWindowView
          Selectable      =   False
          TabIndex        =   0
          TabPanelIndex   =   4
-         TabStop         =   True
          Text            =   "There are currently no settings at this level."
          TextAlign       =   0
          TextColor       =   &h000000
@@ -466,7 +429,7 @@ End
 		    
 		    pgpMain.Value = 1
 		    
-		  ElseIf Not p_repo.RepoFolderInitialized Then
+		  ElseIf p_repo.ProblemAccessingRepository Then
 		    
 		    pgpMain.Value = 2
 		    
@@ -517,24 +480,28 @@ End
 
 #tag EndWindowCode
 
-#tag Events PushButton1
+#tag Events PushButton2
 	#tag Event
 		Sub Action()
-		  // Created 4/15/2011 by Andrew Keller
+		  // Created 7/1/2011 by Andrew Keller
 		  
-		  // Instructs the repository object to initialize the folder.
+		  // Instructs the repository object to open a new repository.
 		  
-		  If p_repo Is Nil Then
-		    
-		    MsgBox "Okay, the repository object is Nil.  You weren't supposed to be able to click that button."
-		    
-		  Else
-		    
-		    p_repo.InitializeRepoFolder
-		    
-		    Update
-		    
-		  End If
+		  MsgBox "Eeek!  I don't know what to do!" + EndOfLine + EndOfLine + "Note to self: This code needs to get written."
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton3
+	#tag Event
+		Sub Action()
+		  // Created 7/1/2011 by Andrew Keller
+		  
+		  // Instructs the repository object to open a new repository.
+		  
+		  MsgBox "Eeek!  I don't know what to do!" + EndOfLine + EndOfLine + "Note to self: This code needs to get written."
 		  
 		  // done.
 		  
@@ -548,17 +515,7 @@ End
 		  
 		  // Instructs the repository object to initialize the folder.
 		  
-		  If p_repo Is Nil Then
-		    
-		    MsgBox "Okay, the repository object is Nil.  You weren't supposed to be able to click that button."
-		    
-		  Else
-		    
-		    p_repo.InitializeRepoFolder
-		    
-		    Update
-		    
-		  End If
+		  MsgBox "Eeek!  I don't know what to do!" + EndOfLine + EndOfLine + "Note to self: This code needs to get written."
 		  
 		  // done.
 		  

@@ -66,68 +66,6 @@ Inherits SharedBTRepoCode
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		 Shared Function InsertNewCase(r As VolatileBTRepo, new_creator As BTPerson, new_headline As String, new_category As String, new_status As String, new_description As String, auto_favorite As Boolean) As BTCase
-		  // Created 4/23/2011 by Andrew Keller
-		  
-		  // Inserts the given case into the given repository,
-		  // assuming that it is a brand new case.  If the
-		  // repository is Nil, then a NilObjectException is raised.
-		  
-		  // First, assemble all the required components.
-		  
-		  Dim new_pk As String = GenerateNewPrimaryKey
-		  // Headline is already set.
-		  // Category is already set.
-		  // Creator is already set.
-		  Dim new_date As New Date
-		  // Status is already set.
-		  // The first message is already set.
-		  Dim new_msgtype As String = kDiscussionTypeStandard
-		  
-		  
-		  // Next, insert the new data.
-		  
-		  Dim dbr As New DatabaseRecord
-		  dbr.BlobColumn( kDB_CasePK ) = new_pk
-		  dbr.BlobColumn( kDB_CaseHeadline ) = new_headline
-		  dbr.BlobColumn( kDB_CaseCategory ) = new_category
-		  dbr.BlobColumn( kDB_CaseCreator ) = Str( new_creator, "" )
-		  dbr.Int64Column( kDB_CaseCreationDate ) = new_date.TotalSeconds
-		  dbr.Int64Column( kDB_CaseModificationDate ) = new_date.TotalSeconds
-		  r.dbinsert kDB_Cases, dbr
-		  
-		  dbr = New DatabaseRecord
-		  dbr.BlobColumn( kDB_StatusRevisionCase ) = new_pk
-		  dbr.BlobColumn( kDB_StatusRevisionStatus ) = new_status
-		  dbr.BlobColumn( kDB_StatusRevisionAuthor ) = Str( new_creator, "" )
-		  dbr.Int64Column( kDB_StatusRevisionDate ) = new_date.TotalSeconds
-		  r.dbinsert kDB_StatusRevisions, dbr
-		  
-		  dbr = New DatabaseRecord
-		  dbr.BlobColumn( kDB_DiscussionCase ) = new_pk
-		  dbr.BlobColumn( kDB_DiscussionAuthor ) = Str( new_creator, "" )
-		  dbr.BlobColumn( kDB_DiscussionType ) = new_msgtype
-		  dbr.BlobColumn( kDB_DiscussionText ) = new_description
-		  dbr.Int64Column( kDB_DiscussionDate ) = new_date.TotalSeconds
-		  dbr.Int64Column( kDB_DiscussionModDate ) = new_date.TotalSeconds
-		  r.dbinsert kDB_Discussions, dbr
-		  
-		  If auto_favorite Then
-		    dbr = New DatabaseRecord
-		    dbr.BlobColumn( kDB_FavoriteCase ) = new_pk
-		    dbr.BlobColumn( kDB_FavoritePerson ) = Str( new_creator, "" )
-		    dbr.Int64Column( kDB_FavoriteDate ) = new_date.TotalSeconds
-		    r.dbinsert kDB_Favorites, dbr
-		  End If
-		  
-		  Return New BTCase( r, new_pk )
-		  
-		  // done.
-		  
-		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
 		Sub Invalidate()
 		  // Created 4/25/2011 by Andrew Keller
 		  
@@ -145,12 +83,6 @@ Inherits SharedBTRepoCode
 		  // done.
 		  
 		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h1000
-		 Shared Function LoadExistingCase(r As VolatileBTRepo, case_object As PropertyListKFS, pk As String) As BTCase
-		  
-		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
@@ -175,6 +107,15 @@ Inherits SharedBTRepoCode
 		Protected Sub load_status(force_reload As Boolean = False)
 		  
 		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1000
+		 Shared Function NewFromPList(case_object As PropertyListKFS, pk As String) As BTCase
+		  // Created 7/2/2011 by Andrew Keller
+		  
+		  // A constructor that takes a case plist and its primary key, and returns a case object.
+		  
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0

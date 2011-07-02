@@ -83,16 +83,62 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub LoadCaseObject(p As PropertyListKFS, pk As String)
-		  // Created 4/21/2011 by Andrew Keller
+		Sub InsertCase(new_case As BTCase)
+		  // Created 7/2/2011 by Andrew Keller
 		  
-		  // Inserts the given case object into the database.
+		  // Adding onto VolatileBTRepo's InsertCase method.
 		  
-		  Dim c As BTCase = BTCase.LoadExistingCase( Me, p, pk )
+		  Super.InsertCase new_case
+		  
+		  // Also add the case to the data pool.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub LoadCase(new_case As BTCase)
+		  // Created 7/2/2011 by Andrew Keller
+		  
+		  // A variant of InsertCase that only adds the case to the database, not the data pool.
+		  
+		  // This is effectively an alias for Super.InsertCase.
+		  
+		  Super.InsertCase new_case
 		  
 		  // done.
 		  
 		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function ProblemAccessingRepository() As Boolean
+		  // Created 7/1/2011 by Andrew Keller
+		  
+		  // Returns whether or not there is a problem with the data pool.
+		  
+		  If p_dir Is Nil Then
+		    
+		    // The pool is Nil, aka not in use.
+		    
+		    Return False
+		    
+		  ElseIf p_dir.Directory = False Then
+		    
+		    // Ouch.  Currently, the data pool must be a folder.
+		    
+		    Return True
+		    
+		  Else
+		    
+		    // All seems good.
+		    
+		    Return False
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
@@ -133,7 +179,7 @@ Inherits VolatileBTRepo
 		        If name.Right( Len( ex ) ) = ex Then name = name.Left( Len( name ) - Len( ex ) )
 		        
 		        Try
-		          LoadCaseObject New PropertyListKFS( f ), name
+		          LoadCase BTCase.NewFromPList( New PropertyListKFS( f ), name )
 		        Catch err
 		        End Try
 		        
@@ -173,7 +219,7 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h1
-		Protected Sub ScanForObjects(within_dir As FolderItem, ByRef config_file As FolderItem, ByRef case_files() As FolderItem)
+		Protected Shared Sub ScanForObjects(within_dir As FolderItem, ByRef config_file As FolderItem, ByRef case_files() As FolderItem)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Finds all of the Bugtracks objects stored in the given folder.

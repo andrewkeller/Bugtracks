@@ -68,7 +68,7 @@ End
 		  
 		  Dim repo_all_good As Boolean = False
 		  If Not ( r Is Nil ) Then
-		    If r.RepoFolderInitialized Then
+		    If Not r.ProblemAccessingRepository Then
 		      repo_all_good = True
 		    End If
 		  End If
