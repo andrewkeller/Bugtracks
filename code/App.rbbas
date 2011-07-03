@@ -30,6 +30,22 @@ Inherits Application
 	#tag EndEvent
 
 
+	#tag MenuHandler
+		Function FileNew() As Boolean Handles FileNew.Action
+			// Created 7/3/2011 by Andrew Keller
+			
+			// The user has requested a new repository.
+			
+			NewDocument
+			
+			Return True
+			
+			// done.
+			
+		End Function
+	#tag EndMenuHandler
+
+
 	#tag Constant, Name = kEditClear, Type = String, Dynamic = False, Default = \"&Delete", Scope = Public
 		#Tag Instance, Platform = Windows, Language = Default, Definition  = \"&Delete"
 		#Tag Instance, Platform = Linux, Language = Default, Definition  = \"&Delete"
