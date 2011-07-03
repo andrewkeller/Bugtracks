@@ -45,6 +45,37 @@ Inherits Application
 		End Function
 	#tag EndMenuHandler
 
+	#tag MenuHandler
+		Function FileOpen() As Boolean Handles FileOpen.Action
+			// Created 7/3/2011 by Andrew Keller
+			
+			// The user wants to open an existing repository.
+			
+			Dim sfd As New SelectFolderDialog
+			sfd.ActionButtonCaption = "Open"
+			sfd.PromptText = "Please select a Bugtracks folder."
+			sfd.Title = "Open Repository"
+			
+			Dim f As FolderItem = sfd.ShowModal
+			
+			If f Is Nil Then
+			
+			// The user clicked cancel.
+			// Do nothing.
+			
+			Else
+			
+			OpenDocument f
+			
+			End If
+			
+			Return True
+			
+			// done.
+			
+		End Function
+	#tag EndMenuHandler
+
 
 	#tag Constant, Name = kEditClear, Type = String, Dynamic = False, Default = \"&Delete", Scope = Public
 		#Tag Instance, Platform = Windows, Language = Default, Definition  = \"&Delete"
