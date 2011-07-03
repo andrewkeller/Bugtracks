@@ -125,6 +125,32 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Function IsAccessingFolder(f As FolderItem) As Boolean
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Returns whether or not this window is currently
+		  // viewing the database located at the given FolderItem f.
+		  
+		  If p_repo Is Nil Then
+		    
+		    Return f Is Nil
+		    
+		  ElseIf p_repo.RepositoryFolder Is Nil Then
+		    
+		    Return f Is Nil
+		    
+		  Else
+		    
+		    Return p_repo.RepositoryFolder.EqualsKFS( f )
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
 	#tag Method, Flags = &h21
 		Private Sub ruve(v As MainWindowView, event_id As String)
 		  // Created 4/23/2011 by Andrew Keller

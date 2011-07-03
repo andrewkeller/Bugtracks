@@ -21,6 +21,26 @@ Inherits Application
 		  
 		  // The user wants to open an existing bug repository.
 		  
+		  // See if this repository is already open.
+		  
+		  For idx As Integer = 0 To WindowCount -1
+		    
+		    If Window(idx) IsA frmMain Then
+		      
+		      If frmMain( Window(idx) ).IsAccessingFolder( item ) Then
+		        
+		        Window(idx).Show
+		        
+		        Return
+		        
+		      End If
+		    End If
+		  Next
+		  
+		  // No windows are currently showing this FolderItem.
+		  
+		  // Create one.
+		  
 		  Dim w As New frmMain( New BTRepo( item ) )
 		  w.Show
 		  
