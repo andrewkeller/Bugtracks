@@ -242,6 +242,19 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub RemoveAllViews()
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Removes all views in this control.
+		  
+		  lstNav.DeleteAllRows
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub RemoveView(view As MainWindowView)
 		  // Created 4/15/2011 by Andrew Keller
 		  
