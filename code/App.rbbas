@@ -7,7 +7,7 @@ Inherits Application
 		  
 		  // The user wants to open a new bug repository.
 		  
-		  Dim w As New frmMain( New BTRepo( Nil ) )
+		  Dim w As New frmMain
 		  w.Show
 		  
 		  // done.
@@ -41,7 +41,7 @@ Inherits Application
 		  
 		  // Create one.
 		  
-		  Dim w As New frmMain( New BTRepo( item ) )
+		  Dim w As New frmMain( item )
 		  w.Show
 		  
 		  // done.

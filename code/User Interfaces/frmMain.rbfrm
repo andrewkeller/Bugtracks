@@ -56,44 +56,44 @@ End
 
 #tag WindowCode
 	#tag Method, Flags = &h1000
+		Sub Constructor()
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Initializes this class.
+		  
+		  Super.Constructor
+		  
+		  ReloadWith New BTRepo
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1000
 		Sub Constructor(r As BTRepo)
 		  // Created 4/15/2011 by Andrew Keller
 		  
 		  // Initializes this class.
 		  
-		  p_repo = r
-		  Constructor
+		  Super.Constructor
 		  
-		  // Add all the default pages to the Navigation Bar.
+		  ReloadWith r
 		  
-		  Dim repo_all_good As Boolean = False
-		  If Not ( r Is Nil ) Then
-		    If Not r.ProblemAccessingRepository Then
-		      repo_all_good = True
-		    End If
-		  End If
+		  // done.
 		  
-		  Dim c As MainWindowView
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1000
+		Sub Constructor(f As FolderItem)
+		  // Created 7/3/2011 by Andrew Keller
 		  
-		  c = New ctrStartPage( r )
-		  FitAndEmbed c
-		  NavBar.AddView "Start Page", c, repo_all_good
+		  // Initializes this class.
 		  
-		  c = New ctrSettings( r )
-		  FitAndEmbed c
-		  NavBar.AddView "Settings", c, Not repo_all_good
+		  Super.Constructor
 		  
-		  c = New ctrSearchPage( r )
-		  FitAndEmbed c
-		  NavBar.AddView "Search", c
-		  
-		  For Each q As BTRepo.PresetCaseQueries In BTRepo.ListPresetCaseQueries
-		    
-		    c = New ctrSearchResultsPage( r, q )
-		    FitAndEmbed c
-		    NavBar.AddView BTRepo.ShortStr(q), c
-		    
-		  Next
+		  ReloadWith f
 		  
 		  // done.
 		  
@@ -149,6 +149,147 @@ End
 		  // done.
 		  
 		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub RefreshUserInterface()
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Refreshes the currently displayed view(s).
+		  
+		  NavBar.RefreshAllViews
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Reload()
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Issues a Reload on the repository, and refreshes the user interface.
+		  
+		  If Not ( p_repo Is Nil ) Then
+		    
+		    p_repo.Reload
+		    
+		    RefreshUserInterface
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub ReloadNavBar()
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Add all the default pages to the Navigation Bar.
+		  
+		  NavBar.RemoveAllViews
+		  
+		  Dim repo_all_good As Boolean = False
+		  If Not ( p_repo Is Nil ) Then
+		    If Not p_repo.ProblemAccessingRepository Then
+		      repo_all_good = True
+		    End If
+		  End If
+		  
+		  Dim c As MainWindowView
+		  
+		  c = New ctrStartPage( p_repo )
+		  FitAndEmbed c
+		  NavBar.AddView "Start Page", c, repo_all_good
+		  
+		  c = New ctrSettings( p_repo )
+		  FitAndEmbed c
+		  NavBar.AddView "Settings", c, Not repo_all_good
+		  
+		  c = New ctrSearchPage( p_repo )
+		  FitAndEmbed c
+		  NavBar.AddView "Search", c
+		  
+		  For Each q As BTRepo.PresetCaseQueries In BTRepo.ListPresetCaseQueries
+		    
+		    c = New ctrSearchResultsPage( p_repo, q )
+		    FitAndEmbed c
+		    NavBar.AddView BTRepo.ShortStr(q), c
+		    
+		  Next
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h1
+		Protected Sub ReloadUserInterface()
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Reloads the user interface.
+		  // Used when p_repo is swapped out.
+		  
+		  // Reload the navigation bar:
+		  
+		  ReloadNavBar
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ReloadWith(repo As BTRepo)
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // A simple script that reloads this window
+		  // with the given BTRepo object.
+		  
+		  p_repo = repo
+		  
+		  ReloadUserInterface
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub ReloadWith(f As FolderItem)
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // A simple script that reloads this window with
+		  // a BTRepo object generated from the given FolderItem.
+		  
+		  p_repo = New BTRepo( f )
+		  
+		  ReloadUserInterface
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub Resave(aggressive As Boolean = False)
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Issues a Resave on the repository, and updates the user interface.
+		  
+		  If Not ( p_repo Is Nil ) Then
+		    
+		    p_repo.Resave aggressive
+		    
+		    RefreshUserInterface
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
