@@ -220,6 +220,28 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub RefreshAllViews()
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Invokes Update on all of the views.
+		  
+		  For row As Integer = 0 To lstNav.ListCount -1
+		    
+		    Dim c As MainWindowView = lstNav.RowTag( row )
+		    
+		    If Not ( c Is Nil ) Then
+		      
+		      c.Update
+		      
+		    End If
+		  Next
+		  
+		  // done.
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub RemoveView(view As MainWindowView)
 		  // Created 4/15/2011 by Andrew Keller
 		  
