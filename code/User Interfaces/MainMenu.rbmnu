@@ -206,7 +206,7 @@ Begin Menu MainMenu
          Index = -2147483648
          AutoEnable = True
       End
-      Begin MenuItem WindowBringAlltoFront
+      Begin MenuItem WindowBringAllToFront
          SpecialMenu = 0
          Text = "Bring All to Front"
          Index = -2147483648
