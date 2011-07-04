@@ -35,6 +35,19 @@ Inherits SharedBTRepoCode
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Function DataSourceSummary() As String
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Returns a summary of the data source of this repository.
+		  
+		  Return kDataSourceMemory
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
 	#tag Method, Flags = &h1
 		Protected Sub dbcommit()
 		  // Created 4/23/2011 by Andrew Keller
@@ -287,6 +300,10 @@ Inherits SharedBTRepoCode
 	#tag Property, Flags = &h1
 		Protected p_db As REALSQLDatabase
 	#tag EndProperty
+
+
+	#tag Constant, Name = kDataSourceMemory, Type = String, Dynamic = False, Default = \"Unsaved (private memory-backed SQLite database)", Scope = Public
+	#tag EndConstant
 
 
 	#tag ViewBehavior

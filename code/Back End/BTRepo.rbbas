@@ -83,6 +83,27 @@ Inherits VolatileBTRepo
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Function DataSourceSummary() As String
+		  // Created 7/3/2011 by Andrew Keller
+		  
+		  // Returns a summary of the data source of this repository.
+		  
+		  If p_dir Is Nil Then
+		    
+		    Return Super.DataSourceSummary
+		    
+		  Else
+		    
+		    Return p_dir.HumanReadablePath
+		    
+		  End If
+		  
+		  // done.
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub InsertCase(new_case As BTCase)
 		  // Created 7/2/2011 by Andrew Keller
 		  
