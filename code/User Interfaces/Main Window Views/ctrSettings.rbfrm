@@ -441,11 +441,11 @@ End
 		  If p_repo Is Nil Then
 		    lblHead.Caption = "Repository-Specific Settings"
 		    
-		  ElseIf p_repo.RepositoryFolder Is Nil Then
+		  ElseIf p_repo.DataSourceSummary = p_repo.kDataSourceMemory Then
 		    lblHead.Caption = "Repository-Specific Settings (not saved yet!)"
 		    
 		  Else
-		    lblHead.Caption = "Repository-Specific Settings for " + p_repo.RepositoryFolder.HumanReadablePath( False )
+		    lblHead.Caption = "Repository-Specific Settings for " + p_repo.DataSourceSummary
 		    
 		  End If
 		  
@@ -456,7 +456,7 @@ End
 		    
 		    pgpMain.Value = 0
 		    
-		  ElseIf p_repo.RepositoryFolder Is Nil Then
+		  ElseIf p_repo.DataSourceSummary = p_repo.kDataSourceMemory Then
 		    
 		    pgpMain.Value = 1
 		    
